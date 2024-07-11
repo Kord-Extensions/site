@@ -47,7 +47,7 @@
 
 			discordAddUrl="https://discord.com/api/oauth2/authorize?client_id=1013045351852298280&permissions=347136&scope=bot%20applications.commands"
 			discordInvite="https://discord.gg/hy2329fcTZ"
-			donationUrl="https://buymeacoffee.com/Hyacinthbots"
+			donationUrl="https://ko-fi.com/jansel"
 			site="https://hyacinthbots.org/allium/"
 			vcs="https://github.com/HyacinthBots/Allium"
 		>
