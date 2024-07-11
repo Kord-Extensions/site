@@ -1,0 +1,755 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+	:root {
+		--tw-prose-links: #111827;
+
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
+
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+
+		--primary: 222.2 47.4% 11.2%;
+		--primary-foreground: 210 40% 98%;
+
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+
+		--accent: 236 65% 86%;
+		--accent-foreground: 222.2 84% 4.9%;
+
+		--navbar-bg: #FAFAFC;
+		--sidebar-bg: #FAFAFC;
+
+		--destructive: 0 72.2% 50.6%;
+		--destructive-foreground: 210 40% 98%;
+		--destructive-background: 0 42.2% 98%;
+
+		--ring: 222.2 84% 4.9%;
+
+		--radius: 0.5rem;
+
+		.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+			background: #fafafa;
+		}
+
+		/* region: Prism Vars */
+
+		--prism-background: #fafafa;
+		--prism-foreground: #90a4ae;
+
+		--prism-language-selection-background: #cceae7;
+
+		--prism-language-css-foreground: #f76d47;
+
+		--prism-token-atrule: #7c4dff;
+		--prism-token-attr-name: #39adb5;
+		--prism-token-attr-value: #f6a434;
+		--prism-token-attribute: #f6a434;
+		--prism-token-boolean: #7c4dff;
+		--prism-token-builtin: #39adb5;
+		--prism-token-cdata: #39adb5;
+		--prism-token-char: #39adb5;
+		--prism-token-class: #39adb5;
+		--prism-token-class-name: #6182b8;
+		--prism-token-comment: #aabfc9;
+		--prism-token-constant: #7c4dff;
+		--prism-token-deleted: #e53935;
+		--prism-token-doctype: #aabfc9;
+		--prism-token-entity: #e53935;
+		--prism-token-function: #7c4dff;
+		--prism-token-hexcode: #f76d47;
+		--prism-token-id: #7c4dff;
+		--prism-token-important: #7c4dff;
+		--prism-token-inserted: #39adb5;
+		--prism-token-keyword: #7c4dff;
+		--prism-token-number: #f76d47;
+		--prism-token-operator: #39adb5;
+		--prism-token-prolog: #aabfc9;
+		--prism-token-property: #39adb5;
+		--prism-token-pseudo-class: #f6a434;
+		--prism-token-pseudo-element: #f6a434;
+		--prism-token-punctuation: #39adb5;
+		--prism-token-regex: #6182b8;
+		--prism-token-selector: #e53935;
+		--prism-token-string: #f6a434;
+		--prism-token-symbol: #7c4dff;
+		--prism-token-tag: #e53935;
+		--prism-token-unit: #f76d47;
+		--prism-token-url: #e53935;
+		--prism-token-variable: #e53935;
+
+		/* endregion */
+	}
+
+	.sidebar-heading-item, .sidebar-navigation-item {
+		.sidebar-link-icon {
+			@apply prose transition-colors;
+			color: var(--tw-prose-bullets);
+		}
+	}
+
+	.dark {
+		--tw-prose-links: #fff;
+
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
+
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
+
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
+
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
+
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
+
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 11.2%;
+
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
+
+		--accent: 235 40% 30%;
+		--accent-foreground: 0 0% 100%;
+
+		--navbar-bg: #040A1A;
+		--sidebar-bg: #040A1A;
+
+		--destructive: 0 80.8% 70.6%;
+		--destructive-foreground: 210 40% 98%;
+		--destructive-background: 0 42.2% 10%;
+
+		--ring: hsl(212.7, 26.8%, 83.9);
+
+		.prose :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+			background: #2f2f2f;
+		}
+
+		/* region: Prism Vars */
+
+		--prism-background: #2f2f2f;
+		--prism-foreground: #eee;
+
+		/* --prism-language-selection-background: #263238; */
+		--prism-language-selection-background: #4C6470;
+
+		--prism-language-css-foreground: #fd9170;
+
+		--prism-token-atrule: #c792ea;
+		--prism-token-attr-name: #ffcb6b;
+		--prism-token-attr-value: #a5e844;
+		--prism-token-attribute: #a5e844;
+		--prism-token-boolean: #c792ea;
+		--prism-token-builtin: #ffcb6b;
+		--prism-token-cdata: #80cbc4;
+		--prism-token-char: #80cbc4;
+		--prism-token-class: #ffcb6b;
+		--prism-token-class-name: #f2ff00;
+		--prism-token-comment: #616161;
+		--prism-token-constant: #c792ea;
+		--prism-token-deleted: #ff6666;
+		--prism-token-doctype: #616161;
+		--prism-token-entity: #ff6666;
+		--prism-token-function: #c792ea;
+		--prism-token-hexcode: #f2ff00;
+		--prism-token-id: #c792ea;
+		--prism-token-important: #c792ea;
+		--prism-token-inserted: #inserted;
+		--prism-token-keyword: #c792ea;
+		--prism-token-number: #fd9170;
+		--prism-token-operator: #89ddff;
+		--prism-token-prolog: #616161;
+		--prism-token-property: #80cbc4;
+		--prism-token-pseudo-class: #a5e844;
+		--prism-token-pseudo-element: #a5e844;
+		--prism-token-punctuation: #89ddff;
+		--prism-token-regex: #f2ff00;
+		--prism-token-selector: #ff6666;
+		--prism-token-string: #a5e844;
+		--prism-token-symbol: #c792ea;
+		--prism-token-tag: #ff6666;
+		--prism-token-unit: #fd9170;
+		--prism-token-url: #ff6666;
+		--prism-token-variable: #ff6666;
+
+		/* endregion */
+
+		.sidebar-heading-item, .sidebar-navigation-item {
+			.sidebar-link-icon {
+				color: var(--tw-prose-invert-bullets);
+			}
+		}
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-border text-foreground;
+
+
+	}
+
+	body > .page-content {
+		@apply bg-background;
+	}
+
+	@media screen and (min-width: 1920px) {
+		body {
+			margin: auto;
+			max-width: 1920px;
+
+			@apply border-l border-r;
+		}
+	}
+}
+
+/* region: Prism (Material, customized and with CSS vars) */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	color: var(--prism-foreground) !important;
+	background: var(--prism-background) !important;
+	font-family: Roboto Mono, monospace;
+	font-size: 1em;
+	line-height: 1.5em;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+	.language-css > code,
+	.language-sass > code,
+	.language-scss > code {
+		color: var(--prism-language-css-foreground);
+	}
+
+	[class*="language-"] .namespace {
+		opacity: 0.7;
+	}
+
+	.token.atrule {
+		color: var(--prism-token-atrule) !important;
+	}
+
+	.token.attr-name {
+		color: var(--prism-token-attr-name) !important;
+	}
+
+	.token.attr-value {
+		color: var(--prism-token-attr-value) !important;
+	}
+
+	.token.attribute {
+		color: var(--prism-token-attr-value) !important;
+	}
+
+	.token.boolean {
+		color: var(--prism-token-boolean) !important;
+	}
+
+	.token.builtin {
+		color: var(--prism-token-builtin) !important;
+	}
+
+	.token.cdata {
+		color: var(--prism-token-cdata) !important;
+	}
+
+	.token.char {
+		color: var(--prism-token-char) !important;
+	}
+
+	.token.class {
+		color: var(--prism-token-class) !important;
+	}
+
+	.token.class-name {
+		color: var(--prism-token-class-name) !important;
+	}
+
+	.token.comment {
+		color: var(--prism-token-comment) !important;
+	}
+
+	.token.constant {
+		color: var(--prism-token-constant) !important;
+	}
+
+	.token.deleted {
+		color: var(--prism-token-deleted) !important;
+	}
+
+	.token.doctype {
+		color: var(--prism-token-doctype) !important;
+	}
+
+	.token.entity {
+		color: var(--prism-token-entity) !important;
+	}
+
+	.token.function {
+		color: var(--prism-token-function) !important;
+	}
+
+	.token.hexcode {
+		color: var(--prism-token-hexcode) !important;
+	}
+
+	.token.id {
+		color: var(--prism-token-id) !important;
+		font-weight: bold;
+	}
+
+	.token.important {
+		color: var(--prism-token-important) !important;
+		font-weight: bold;
+	}
+
+	.token.inserted {
+		color: var(--prism-token-inserted) !important;
+	}
+
+	.token.keyword {
+		color: var(--prism-token-keyword) !important;
+	}
+
+	.token.number {
+		color: var(--prism-token-number) !important;
+	}
+
+	.token.operator {
+		color: var(--prism-token-operator) !important;
+	}
+
+	.token.prolog {
+		color: var(--prism-token-prolog) !important;
+	}
+
+	.token.property {
+		color: var(--prism-token-property) !important;
+	}
+
+	.token.pseudo-class {
+		color: var(--prism-token-pseudo-class) !important;
+	}
+
+	.token.pseudo-element {
+		color: var(--prism-token-pseudo-element) !important;
+	}
+
+	.token.punctuation {
+		color: var(--prism-token-punctuation) !important;
+	}
+
+	.token.regex {
+		color: var(--prism-token-regex) !important;
+	}
+
+	.token.selector {
+		color: var(--prism-token-selector) !important;
+	}
+
+	.token.string {
+		color: var(--prism-token-string) !important;
+	}
+
+	.token.symbol {
+		color: var(--prism-token-symbol) !important;
+	}
+
+	.token.tag {
+		color: var(--prism-token-tag) !important;
+	}
+
+	.token.unit {
+		color: var(--prism-token-unit) !important;
+	}
+
+	.token.url {
+		color: var(--prism-token-url) !important;
+	}
+
+	.token.variable {
+		color: var(--prism-token-variable) !important;
+	}
+}
+
+code[class*="language-"]::-moz-selection,
+pre[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection,
+pre[class*="language-"] ::-moz-selection {
+	background: var(--prism-language-selection-background) !important;
+}
+
+code[class*="language-"]::selection,
+pre[class*="language-"]::selection,
+code[class*="language-"] ::selection,
+pre[class*="language-"] ::selection {
+	background: var(--prism-language-selection-background) !important;
+}
+
+:not(pre) > code[class*="language-"] {
+	white-space: normal;
+	border-radius: 0.2em;
+	padding: 0.1em;
+}
+
+pre[class*="language-"] {
+	overflow: auto;
+	position: relative;
+	margin: 0;
+	padding: 0 1em;
+
+	height: fit-content;
+}
+
+/* endregion */
+
+a.link {
+	@apply underline;
+
+	color: var(--tw-prose-links);
+	font-weight: 500;
+}
+
+.banner-image {
+	max-height: 12rem;
+}
+
+.gfm-color-chip {
+	margin-bottom: -0.06rem;
+	margin-left: 0.3rem;
+	display: inline-block;
+	height: 0.7rem;
+	width: 0.7rem;
+	border-radius: 9999px;
+	border: 1px solid var(--border);
+}
+
+.prose {
+	hr {
+		margin-top: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	:where(code):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+		z-index: 10;
+
+		&:not([class*="language-"]) {
+			padding: 6px 10px;
+			border-radius: 6px;
+		}
+
+		&::before, &::after {
+			content: none;
+		}
+	}
+}
+
+.sidebar-children {
+	@apply mb-0;
+}
+
+.sidebar-children:empty {
+	display: none;
+}
+
+.sidebar-link-icon, .sidebar-icon {
+	margin-right: 0.7rem;
+}
+
+.sidebar-link-icon:empty, .sidebar-icon:empty {
+	display: none;
+}
+
+.section-picker {
+	max-height: 39px;
+	/*transition: max-height 0.15s ease-out;*/
+
+	overflow: hidden;
+}
+
+.section-picker.open {
+	max-height: 153px;
+}
+
+.section-picker-arrow {
+	margin-right: 0.7rem;
+	transition: transform 0.15s linear;
+}
+
+.section-picker.open .section-picker-arrow {
+	transform: rotate(90deg)
+}
+
+h1, h2, h3, h4, h5, h6 {
+	scroll-margin-top: 4.5em;
+}
+
+* {
+	@apply scrollbar-w-2 scrollbar-h-2 scrollbar scrollbar-thumb-rounded scrollbar-thumb-accent scrollbar-track-background;
+}
+
+.prose {
+	max-width: none;
+
+	h1, h2, h3, h4, h5, h6 {
+		align-items: baseline;
+		align-content: center;
+		display: flex;
+
+		a {
+			margin-left: 0.3em;
+			margin-right: 0.3em;
+
+			font-size: 70%;
+			text-decoration-line: none;
+
+			color: rgb(59, 130, 246);
+		}
+
+		a:hover {
+			text-decoration-line: underline;
+		}
+	}
+
+	ul li, ol li {
+		margin-top: 1em;
+		margin-bottom: 1em;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		p {
+			margin-top: 0.5em;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+html {
+	background: hsl(var(--border) / 1);
+}
+
+.remark-oembed-you-tube {
+	aspect-ratio: 16 / 9;
+
+	margin: 2em;
+	border: 1px solid hsl(var(--border));
+
+	& > iframe {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.divider {
+	span {
+		@apply flex-shrink;
+		@apply font-medium;
+		@apply text-sm;
+	}
+
+	.divider-start {
+		@apply bg-border;
+		@apply flex-grow;
+	}
+
+	.divider-end {
+		@apply bg-border;
+		@apply flex-grow;
+	}
+}
+
+.divider-horizontal {
+	@apply w-full;
+
+	.divider-start {
+		height: 1px;
+
+		@apply mr-2;
+		@apply px-1;
+	}
+
+	.divider-end {
+		height: 1px;
+
+		@apply ml-2;
+		@apply px-1;
+	}
+}
+
+.divider-vertical {
+	@apply h-full;
+
+	span {
+		transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+	}
+
+	.divider-start {
+		width: 1px;
+
+		@apply mb-2;
+		@apply py-1;
+	}
+
+	.divider-end {
+		width: 1px;
+
+		@apply mt-2;
+		@apply py-1;
+	}
+}
+
+.no-header-links {
+	h2, h3, h4, h5, h6 {
+		display: none;
+	}
+
+	h1 {
+		@apply mb-4;
+	}
+
+	.header-link-icon {
+		display: none;
+	}
+}
+
+.prose h2 {
+	@apply my-4;
+}
+
+.prose li {
+	@apply my-2;
+
+	p {
+		@apply my-0;
+	}
+}
+
+.emoji {
+	height: 1.1em;
+
+	@apply my-0 self-center;
+}
+
+.prose {
+	.article-markdown-example {
+		@apply grid grid-cols-1 gap-2;
+
+		@screen xl {
+			@apply grid-cols-2;
+		}
+	}
+
+	code:not[class|=language] {
+		@apply inline-flex flex-row items-baseline space-x-2;
+	}
+
+	.icon-wrapper {
+		@apply inline-flex flex-row items-baseline space-x-1;
+
+		.text {
+			font-size: 1.1em;
+			line-height: 1.1em;
+
+			@apply py-1;
+		}
+
+		.icon {
+			svg {
+				display: inline;
+			}
+		}
+	}
+}
+
+.sidebar-heading-item, .sidebar-navigation-item {
+	.sidebar-link-icon {
+		@apply text-secondary-foreground;
+	}
+}
+
+.sidebar-heading-item:hover, .sidebar-navigation-item:hover {
+	.sidebar-link-icon {
+		color: var(--accent-foreground) !important;
+	}
+}
+
+.alert {
+	padding-left: 1em !important;
+
+	h5 p {
+		margin: 0;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	&.bg-destructive {
+		background-color: hsl(var(--destructive-background));
+	}
+
+	&.text-destructive div {
+		color: hsl(var(--foreground));
+	}
+}
+
+
+.footnote-link {
+	@apply text-blue-400;
+	text-underline: none;
+	text-decoration: none;
+	margin-right: 0.4em;
+}
+
+.navbar {
+	background-color: var(--navbar-bg);
+}
+
+.sidebar {
+	background-color: var(--sidebar-bg);
+}
