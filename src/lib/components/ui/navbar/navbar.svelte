@@ -7,7 +7,7 @@
 
 	import Navbar from "$lib/components/ui/navbar/index";
 
-	import { X, Menu, Moon, RefreshCw, Sun, Home, Book, Languages, LayoutGrid } from "lucide-svelte";
+	import { X, Menu, Moon, RefreshCw, Sun, Home, Book, Languages, LayoutGrid, DollarSign } from "lucide-svelte";
 	import { setMode } from "mode-watcher";
 
 	import Discord from "virtual:icons/simple-icons/discord";
@@ -25,8 +25,8 @@
 			>
 				<div class="flex flex-row justify-between m-2 mt-0 items-center">
 					<div class="flex flex-row items-center justify-items-center space-x-1">
-						<a href="/">
-							<img src="/logo.png" alt="The Kord Extensions logo" class="size-10" />
+						<a href="/" class="!size-10">
+							<img src="/logo.png" alt="The Kord Extensions logo" class="!size-10" />
 						</a>
 
 						<Navbar.Header drawer class="hidden sm:block" href="/">
@@ -68,16 +68,22 @@
 						Docs
 					</Navbar.DrawerLink>
 
-					<Navbar.DrawerLink href="https://hosted.weblate.org/engage/kord-extensions/" bind:open={drawer0pen}>
-						<Languages class="mr-2" size="1.5em" slot="icon" />
+					<Navbar.DrawerLink href="https://ko-fi.com/gsc" bind:open={drawer0pen}>
+						<DollarSign class="mr-2" size="1.5em" slot="icon" />
 
-						Translate
+						Donate
 					</Navbar.DrawerLink>
 
 					<Navbar.DrawerLink href="/projects" bind:open={drawer0pen}>
 						<LayoutGrid class="mr-2" size="1.5em" slot="icon" />
 
 						Projects
+					</Navbar.DrawerLink>
+
+					<Navbar.DrawerLink href="https://hosted.weblate.org/engage/kord-extensions/" bind:open={drawer0pen}>
+						<Languages class="mr-2" size="1.5em" slot="icon" />
+
+						Translate
 					</Navbar.DrawerLink>
 				</div>
 			</div>
@@ -94,8 +100,8 @@
 			</Button>
 
 			<div class="hidden md:flex items-center space-x-1 mr-6">
-				<a href="/">
-					<img src="/logo.png" alt="The Kord Extensions logo" class="size-10" />
+				<a href="/" class="!size-10">
+					<img src="/logo.png" alt="The Kord Extensions logo" class="!size-10" />
 				</a>
 
 				<Navbar.Header href="/">
@@ -106,12 +112,16 @@
 					Docs
 				</Navbar.Link>
 
-				<Navbar.Link href="https://hosted.weblate.org/engage/kord-extensions/">
-					Translate
+				<Navbar.Link href="https://ko-fi.com/gsc">
+					Donate
 				</Navbar.Link>
 
 				<Navbar.Link href="/projects">
 					Projects
+				</Navbar.Link>
+
+				<Navbar.Link href="https://hosted.weblate.org/engage/kord-extensions/">
+					Translate
 				</Navbar.Link>
 			</div>
 		</div>

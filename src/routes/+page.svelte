@@ -85,6 +85,36 @@ libraryDependencies ++= Seq(
 		<version>${data.version}</version>
 	</dependency>
 </dependencies>`
+
+	const groovyHtml = `
+<pre class="language-groovy rounded-lg border shadow-sm h-full">
+<code class="language-groovy">
+${Prism.highlight(groovyCode, Prism.languages.groovy, "groovy")}
+</code>
+</pre>`
+
+	const kotlinHtml = `
+<pre class="language-kotlin rounded-lg border shadow-sm h-full">
+<code class="language-kotlin">
+${Prism.highlight(kotlinCode, Prism.languages.kotlin, "kotlin")}
+</code>
+</pre>`
+
+	const sbtHtml = `
+<pre class="language-scala rounded-lg border shadow-sm h-full">
+<code class="language-scala">
+${Prism.highlight(sbtCode, Prism.languages.scala, "scala")}
+</code>
+</pre>`
+
+	const mavenHtml = `
+<pre class="language-xml rounded-lg border shadow-sm h-full">
+<code class="language-xml">
+${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
+</code>
+</pre>`
+
+
 </script>
 
 <Metadata
@@ -172,39 +202,23 @@ libraryDependencies ++= Seq(
 				</Tabs.List>
 
 				<Tabs.Content value="gradle-kt">
-					<pre class="language-kotlin rounded-lg border shadow-sm h-full">
-						<code class="language-kotlin">
-							<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-							{@html Prism.highlight(kotlinCode, Prism.languages.kotlin, "kotlin")}
-						</code>
-					</pre>
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+					{@html kotlinHtml}
 				</Tabs.Content>
 
 				<Tabs.Content value="gradle-groovy">
-					<pre class="language-groovy rounded-lg border shadow-sm h-full">
-						<code class="language-groovy">
-							<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-							{@html Prism.highlight(groovyCode, Prism.languages.groovy, "groovy")}
-						</code>
-					</pre>
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+					{@html groovyHtml}
 				</Tabs.Content>
 
 				<Tabs.Content value="maven">
-					<pre class="language-xml rounded-lg border shadow-sm h-full">
-						<code class="language-xml">
-							<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-							{@html Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
-						</code>
-					</pre>
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+					{@html mavenHtml}
 				</Tabs.Content>
 
 				<Tabs.Content value="sbt">
-					<pre class="language-xml rounded-lg border shadow-sm h-full">
-						<code class="language-xml">
-							<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-							{@html Prism.highlight(sbtCode, Prism.languages.scala, "scala")}
-						</code>
-					</pre>
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+					{@html sbtHtml}
 				</Tabs.Content>
 			</Tabs.Root>
 		</section>
