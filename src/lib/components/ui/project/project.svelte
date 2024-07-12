@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { cn } from "$lib/utils"
 	import Button from "$lib/components/ui/button/button.svelte"
 
 	import { DollarSign, Plus, Code, Globe } from "lucide-svelte"
@@ -6,6 +7,7 @@
 
 	export let name: string
 	export let image: string | undefined = undefined
+	export let padImage: boolean = false
 
 	export let site: string | undefined = undefined
 	export let vcs: string | undefined = undefined
@@ -15,10 +17,16 @@
 	export let donationUrl: string | undefined = undefined
 </script>
 
-<div class="flex flex-row">
-	<div class="w-48 h-48 mr-4">
+<div class="flex flex-row mb-4">
+	<div class={cn(
+		"mr-4 bg-accent rounded-lg h-56 w-56",
+		padImage ? "p-4" : "",
+	)}>
 		{#if image !== undefined}
-			<img src={image} alt={`Logo for ${name}`} />
+			<img src={image} alt={`Logo for ${name}`} class={cn(
+					"rounded-lg",
+					padImage ? "max-w-48 max-h-48" : "max-w-56 max-h-56 m-auto"
+				)}/>
 		{/if}
 	</div>
 
@@ -30,31 +38,31 @@
 
 			<div>
 				{#if site !== undefined}
-					<Button href={site} variant="secondary" size="sm">
+					<Button href={site} variant="secondary" size="sm" title="Website">
 						<Globe size="1rem" />
 					</Button>
 				{/if}
 
 				{#if vcs !== undefined}
-					<Button href={vcs} variant="secondary" size="sm">
+					<Button href={vcs} variant="secondary" size="sm" title="Source Code">
 						<Code size="1rem" />
 					</Button>
 				{/if}
 
 				{#if donationUrl !== undefined}
-					<Button href={donationUrl} variant="secondary" size="sm">
+					<Button href={donationUrl} variant="secondary" size="sm" title="Donations">
 						<DollarSign size="1rem" />
 					</Button>
 				{/if}
 
 				{#if discordInvite !== undefined}
-					<Button href={discordInvite} variant="secondary" size="sm">
+					<Button href={discordInvite} variant="secondary" size="sm" title="Discord Server">
 						<Discord height="1rem" width="0.95rem" />
 					</Button>
 				{/if}
 
 				{#if discordAddUrl !== undefined}
-					<Button href={discordAddUrl} variant="accent" size="sm">
+					<Button href={discordAddUrl} variant="accent" size="sm" title="Add to Server">
 						<Plus size="1rem" class="mr-2" /> Add to server
 					</Button>
 				{/if}

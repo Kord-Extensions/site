@@ -246,6 +246,8 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 		<Project
 			name="LilyBot"
 			image="/projects/lilybot.png"
+			padImage
+
 			discordAddUrl="https://discord.com/api/oauth2/authorize?client_id=876278900836139008&permissions=1151990787078&scope=bot%20applications.commands"
 			discordInvite="https://discord.gg/hy2329fcTZ"
 			donationUrl="https://buymeacoffee.com/Hyacinthbots"
@@ -259,12 +261,34 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 			</p>
 
 			<p>
-				The LilyBot developers occasionally contribute to Kord Extensions, and are responsible for a myriad of fixes over
-				the years.
+				The LilyBot developers occasionally contribute to Kord Extensions, and they are responsible for a myriad of
+				features and fixes over the years.
 			</p>
 		</Project>
 
-		<Button href="/projects" variant="accent" class="mt-2">
+		<Project
+			name="NabBot"
+			image="/projects/nabbot.png"
+
+			discordAddUrl="https://discord.com/oauth2/authorize?client_id=168155574725246976&permissions=138244779216&scope=bot%20applications.commands"
+			discordInvite="https://support.nabbot.xyz/"
+			donationUrl="https://patreon.nabbot.xyz/"
+			site="https://nabbot.xyz/"
+		>
+			<p>
+				NabBot is a Discord bot that integrates with Tibia, a MMORPG from 1997. It provides a variety of utility
+				commands, as well as an account-linking system, supporting linked roles based on your guild, level/death
+				announcements, wiki lookup commands, and much more.
+			</p>
+
+			<p>
+				NabBot is a long-running bot that recently moved to Kord Extensions. It's been recognised as a "Promoted
+				Fansite" by the Tibia developers since 2020, with nearly 23,000 users and just over 15,000 servers,
+				<a class="link" href="https://nabbot.xyz/stats/2023">according to their 2023 stats page</a>.
+			</p>
+		</Project>
+
+		<Button href="/projects" variant="accent">
 			More Projects <ArrowRight size="1.3em" class="ml-2" />
 		</Button>
 	</div>

@@ -102,6 +102,21 @@
 		</Project>
 
 		<Project
+			name="NabBot"
+			author="NabBot"
+
+			discordAddUrl="https://discord.com/oauth2/authorize?client_id=168155574725246976&permissions=138244779216&scope=bot%20applications.commands"
+			discordInvite="https://support.nabbot.xyz/"
+			donationUrl="https://patreon.nabbot.xyz/"
+			site="https://nabbot.xyz/"
+		>
+			<p>
+				NabBot integrates with Tibia, a MMORPG from 1997, providing a variety of utility commands, an account-linking
+				system including linked roles, level/death announcements, and much more.
+			</p>
+		</Project>
+
+		<Project
 			name="Tonbrett"
 			author="DRSchlaubi"
 			license="MIT"
