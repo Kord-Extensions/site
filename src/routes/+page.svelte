@@ -243,6 +243,8 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 			Please note that we are not responsible for the projects linked to below, and you use them at your own risk.
 		</p>
 
+		<hr class="mt-4 mb-5 md:hidden" />
+
 		<Project
 			name="LilyBot"
 			image="/projects/lilybot.png"
