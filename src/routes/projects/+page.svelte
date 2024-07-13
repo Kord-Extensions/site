@@ -66,6 +66,7 @@
 		>
 			<p>
 				A TTRPG utility bot, including an advanced dice-roller, and with support for a wide range of game systems.
+				Upcoming features include an initiative tracker, and potential integration with Discord Activities.
 			</p>
 		</Project>
 
