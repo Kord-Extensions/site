@@ -157,7 +157,16 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 	<div class="mt-4 mb-2">
 		<h1 class="text-3xl font-semibold text-center">The premier, community-driven Discord bot framework for Kotlin</h1>
 		<div class="flex flex-col items-center mt-4">
-			<Button href="#about" variant="secondary"><ArrowDown size="1.5rem" class="mr-1" />Scroll to info</Button>
+			<Button
+				id="scroll-button"
+				href="#about"
+				variant="secondary"
+				class="motion-safe:animate-bounce shadow"
+				style="animation-iteration-count: 2.53;"
+			>
+				<ArrowDown size="1.5rem" class="mr-1" />
+				Scroll to info
+			</Button>
 		</div>
 	</div>
 </Containers.Content>
