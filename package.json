@@ -62,6 +62,7 @@
     "unist-util-is": "^6.0.0",
     "unist-util-visit": "^5.0.0",
     "unplugin-icons": "^0.18.5",
-    "vaul-svelte": "^0.3.0"
+    "vaul-svelte": "^0.3.0",
+    "yaml": "^2.4.5"
   }
 }

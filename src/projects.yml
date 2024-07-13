@@ -1,0 +1,136 @@
+bots:
+  - name: Allium
+    author: HyacinthBots
+    license: GPL 3.0
+
+    botInvite: "https://discord.com/api/oauth2/authorize?client_id=1013045351852298280&permissions=347136&scope=bot%20applications.commands"
+    serverInvite: "https://discord.gg/hy2329fcTZ"
+
+    donationUrl: "https://ko-fi.com/jansel"
+    site: "https://hyacinthbots.org/allium/"
+    vcs: "https://github.com/HyacinthBots/Allium"
+
+    shortDescription: Utility bot for Minecraft modding.
+
+    description: |-
+      A Minecraft-modding-focused Discord bot, providing commands to look up mappings, or search for mods on mod
+      hosting websites, among other things.
+
+  - name: Athena
+    author: Pyrrha
+
+    botInvite: "https://discord.com/api/oauth2/authorize?client_id=1175660459152642158&permissions=274878220352&scope=bot%20applications.commands"
+    serverInvite: "https://discord.gg/3sFQPXMqVF"
+
+    shortDescription: TTRPG utility bot with advanced features.
+
+    description: |-
+      A TTRPG utility bot, including an advanced dice-roller, and with support for a wide range of game systems.
+      Upcoming features include an initiative tracker, and potential integration with Discord Activities.
+
+  - name: kose kata
+    author: mazziechai
+    license: MPL 2.0
+
+    botInvite: "https://discord.com/api/oauth2/authorize?client_id=1079265734456250439&permissions=0&scope=bot%20applications.commands"
+    serverInvite: "https://discord.gg/Eb8faZKx5d"
+
+    vcs: "https://github.com/mazziechai/kose-kata"
+
+    shortDescription: In-depth tag management bot.
+
+    description: |-
+      A fully-featured tag-management bot with many in-depth features, including the ability to link tags together,
+      create tags from existing messages, and more.
+
+  - name: LilyBot
+    author: HyacinthBots
+    license: GPL 3.0
+
+    botInvite: "https://discord.com/api/oauth2/authorize?client_id=876278900836139008&permissions=1151990787078&scope=bot%20applications.commands"
+    serverInvite: "https://discord.gg/hy2329fcTZ"
+
+    donationUrl: "https://buymeacoffee.com/Hyacinthbots"
+    site: "https://hyacinthbots.org/lily/"
+    vcs: "https://github.com/HyacinthBots/LilyBot"
+
+    shortDescription: Moderation and utility bot.
+
+    description: |-
+      A general-purpose Discord bot with a focus on moderation tooling and general utilities, with support for link
+      filtering, case management, and many other features.
+
+  - name: NabBot
+    author: NabBot
+
+    botInvite: "https://discord.com/oauth2/authorize?client_id=168155574725246976&permissions=138244779216&scope=bot%20applications.commands"
+    serverInvite: "https://support.nabbot.xyz/"
+
+    donationUrl: "https://patreon.nabbot.xyz/"
+    site: "https://nabbot.xyz/"
+
+    shortDescription: Tibia (1997) integration and utility bot.
+
+    description: |-
+      NabBot integrates with Tibia, a MMORPG from 1997, providing a variety of utility commands, an account-linking
+      system including linked roles, level/death announcements, and much more.
+
+  - name: Tonbrett
+    author: DRSchlaubi
+    license: MIT
+
+    vcs: "https://github.com/DRSchlaubi/Tonbrett"
+
+    shortDescription: Self-hosted soundboard bot.
+
+    description: |-
+      A self-hostable soundboard bot with a Web UI, built using the
+      <a href="https://github.com/DRSchlaubi/mikbot">Mikbot meta-framework</a>.
+      Allows users to play sound effects in Discord voice channels without paying for Nitro.
+
+  - name: VoteBot
+    author: VoteBot
+    license: MIT
+
+    botInvite: "https://look-at.it/votebot"
+
+    vcs: "https://github.com/DRSchlaubi/Tonbrett"
+
+    shortDescription: Voting bot with pie charts.
+
+    description: |-
+      Simple voting bot that can create pie charts from the results.
+      This is a <a href="https://github.com/DRSchlaubi/mikbot">Mikbot</a> plugin with a hosted
+      instance available.
+
+libraries:
+  - name: Mikbot
+    author: DRSchlaubi
+    license: MIT
+
+    serverInvite: "https://discord.gg/Eb8faZKx5d"
+
+    vcs: "https://github.com/DRSchlaubi/mikbot"
+
+    shortDescription: Meta-framework with advanced tools.
+
+    description: |-
+      A meta-framework built on top of KordEx, which provides a plugin framework, GDPR compliance tools, and built-in
+      database tools, among other things.
+
+tools:
+  - name: doc-generator
+    author: HyacinthBots
+    license: MIT
+
+    serverInvite: "https://discord.gg/hy2329fcTZ"
+
+    donationUrl: "https://buymeacoffee.com/Hyacinthbots"
+    site: "https://github.com/HyacinthBots/doc-generator/blob/main/docs/usage-guide.md"
+    vcs: "https://github.com/HyacinthBots/doc-generator"
+
+    shortDescription: Command documentation generator.
+
+    description: |-
+      A simple tool that generates a Markdown file, which contains documentation on all of the commands registered
+      to your Kord Extensions bot on startup.

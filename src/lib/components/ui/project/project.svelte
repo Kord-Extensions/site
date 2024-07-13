@@ -17,15 +17,15 @@
 	export let donationUrl: string | undefined = undefined
 </script>
 
-<div class="flex flex-col items-center md:items-start md:flex-row mb-4">
+<div class="flex flex-col items-center md:items-start md:flex-row">
 	<div class={cn(
-		"mb-4 md:mr-4 md:mb-0 bg-accent rounded-lg h-56 w-56",
+		"mb-4 md:mr-4 md:mb-0 bg-accent rounded-lg h-40 w-40",
 		padImage ? "p-4" : "",
 	)}>
 		{#if image !== undefined}
 			<img src={image} alt={`Logo for ${name}`} class={cn(
 					"rounded-lg",
-					padImage ? "max-w-48 max-h-48" : "max-w-56 max-h-56 m-auto"
+					padImage ? "max-w-32 max-h-32" : "max-w-40 max-h-40 m-auto"
 				)}/>
 		{/if}
 	</div>
@@ -72,7 +72,5 @@
 		<div class="prose dark:prose-invert mt-2">
 			<slot></slot>
 		</div>
-
-		<hr class="mt-4 mb-2 md:hidden" />
 	</div>
 </div>

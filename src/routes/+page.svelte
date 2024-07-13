@@ -1,13 +1,18 @@
 <script lang="ts">
+	import type { Projects, Project } from "$lib/projects";
+
 	import Metadata from "$lib/components/head/Metadata.svelte";
-	import Project from "$lib/components/ui/project/project.svelte";
 
 	import * as Tabs from "$lib/components/ui/tabs";
 
 	import { Button } from "$lib/components/ui/button";
 	import Containers from "$lib/components/ui/containers"
 
-	import { ArrowRight } from "lucide-svelte";
+	import Grid from "$lib/components/ui/project/grid.svelte"
+	import CompactProject from "$lib/components/ui/project/grid-item-compact.svelte"
+	import FeaturedProject from "$lib/components/ui/project/project.svelte"
+
+	import { ArrowRight, ArrowDown } from "lucide-svelte";
 
 	import Prism from "prismjs"
 
@@ -17,9 +22,30 @@
 
 	import "prismjs/components/prism-java"
 	import "prismjs/components/prism-scala"
+	import { Divider } from "$lib/components/ui/divider";
 
 	export let data: {
+		projects: Projects,
 		version: string
+	}
+
+	let allProjects: Array<Project>;
+	let projects: Array<Project>;
+
+	$: {
+		allProjects = [...data.projects.bots, ...data.projects.libraries, ...data.projects.tools]
+		projects = []
+
+		allProjects = allProjects.sort(() => 0.5 - Math.random())
+		projects.push(allProjects.pop()!)
+
+		allProjects = allProjects.sort(() => 0.5 - Math.random())
+		projects.push(allProjects.pop()!)
+
+		allProjects = allProjects.sort(() => 0.5 - Math.random())
+		projects.push(allProjects.pop()!)
+
+		projects = projects.sort((l, r) => l.name.localeCompare(r.name))
 	}
 
 	const groovyCode = `repositories {
@@ -114,7 +140,6 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 </code>
 </pre>`
 
-
 </script>
 
 <Metadata
@@ -129,15 +154,83 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 		</picture>
 	</div>
 
-	<div class="my-4">
-		<h1 class="text-3xl font-semibold text-center">The premier Discord bot framework for Kotlin</h1>
+	<div class="mt-4 mb-2">
+		<h1 class="text-3xl font-semibold text-center">The premier, community-driven Discord bot framework for Kotlin</h1>
+		<div class="flex flex-col items-center mt-4">
+			<Button href="#about" variant="secondary"><ArrowDown size="1.5rem" class="mr-1" />Scroll to info</Button>
+		</div>
 	</div>
 </Containers.Content>
 
 <Containers.Content>
+	<div class="flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0">
+		<FeaturedProject
+			name="LilyBot"
+			image="/projects/lilybot.png"
+			padImage
+
+			discordAddUrl="https://discord.com/api/oauth2/authorize?client_id=876278900836139008&permissions=1151990787078&scope=bot%20applications.commands"
+			discordInvite="https://discord.gg/hy2329fcTZ"
+			donationUrl="https://buymeacoffee.com/Hyacinthbots"
+			site="https://hyacinthbots.org/lily/"
+			vcs="https://github.com/HyacinthBots/LilyBot/tree/main"
+		>
+			<p>
+				LilyBot is an open-source, general-purpose Discord bot with a focus on moderation tooling and general utilities.
+				It was originally developed by members of <a href="https://www.irisshaders.dev/">the Iris project</a>, but has
+				since grown in scope and been split off into <a href="https://hyacinthbots.org/">the Hyacinth Bots organisation</a>.
+			</p>
+
+			<p>
+				The LilyBot developers occasionally contribute to Kord Extensions, and they are responsible for a myriad of
+				features and fixes over the years.
+			</p>
+		</FeaturedProject>
+
+		<div class="self-center border-t pb-1 h-0 w-full md:border-r md:h-64 md:w-0 md:pb-0"></div>
+
+		<FeaturedProject
+			name="NabBot"
+			image="/projects/nabbot.png"
+
+			discordAddUrl="https://discord.com/oauth2/authorize?client_id=168155574725246976&permissions=138244779216&scope=bot%20applications.commands"
+			discordInvite="https://support.nabbot.xyz/"
+			donationUrl="https://patreon.nabbot.xyz/"
+			site="https://nabbot.xyz/"
+		>
+			<p>
+				NabBot is a Discord bot that integrates with Tibia, a MMORPG from 1997. It provides a variety of utility
+				commands, as well as an account-linking system, supporting linked roles based on your guild, level/death
+				announcements, wiki lookup commands, and much more.
+			</p>
+
+			<p>
+				NabBot is a long-running bot that recently moved to Kord Extensions. It's been recognised as a "Promoted
+				Fansite" by the Tibia developers since 2020, with nearly 23,000 users and just over 15,000 servers,
+				<a class="link" href="https://nabbot.xyz/stats/2023">according to their 2023 stats page</a>.
+			</p>
+		</FeaturedProject>
+	</div>
+
+	<hr class="block md:hidden mt-6" />
+
+	<Grid centered>
+		{#each projects as project}
+			<CompactProject {project} />
+		{/each}
+
+		<Button href="/projects" variant="accent" size="lg">
+			More Projects <ArrowRight size="1.3em" class="ml-2" />
+		</Button>
+	</Grid>
+</Containers.Content>
+
+<hr />
+
+<Containers.Content>
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 		<section>
-			<h2 class="title font-semibold text-2xl mb-0">About Kord Extensions</h2>
+			<h2 class="title font-semibold text-2xl mb-0" id="about">About Kord Extensions</h2>
 
 			<p>
 				Kord Extensions (AKA KordEx) is a Discord bot framework built on top of
@@ -222,76 +315,5 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 				</Tabs.Content>
 			</Tabs.Root>
 		</section>
-	</div>
-</Containers.Content>
-
-<Containers.Content>
-	<hr class="mb-5" />
-
-	<div>
-		<h2 class="title font-semibold text-2xl">
-			Featured Projects
-		</h2>
-
-		<p class="mb-2">
-			The following top-tier projects are powered by Kord Extensions.
-			If you'd like to see your project mentioned on this site, please
-			<a class="link" href="https://discord.gg/nYzQWcjAmK">contact us on Discord</a>.
-		</p>
-
-		<p class="mb-4 font-bold">
-			Please note that we are not responsible for the projects linked to below, and you use them at your own risk.
-		</p>
-
-		<hr class="mt-4 mb-5 md:hidden" />
-
-		<Project
-			name="LilyBot"
-			image="/projects/lilybot.png"
-			padImage
-
-			discordAddUrl="https://discord.com/api/oauth2/authorize?client_id=876278900836139008&permissions=1151990787078&scope=bot%20applications.commands"
-			discordInvite="https://discord.gg/hy2329fcTZ"
-			donationUrl="https://buymeacoffee.com/Hyacinthbots"
-			site="https://hyacinthbots.org/lily/"
-			vcs="https://github.com/HyacinthBots/LilyBot/tree/main"
-		>
-			<p>
-				LilyBot is an open-source, general-purpose Discord bot with a focus on moderation tooling and general utilities.
-				It was originally developed by members of <a href="https://www.irisshaders.dev/">the Iris project</a>, but has
-				since grown in scope and been split off into <a href="https://hyacinthbots.org/">the Hyacinth Bots organisation</a>.
-			</p>
-
-			<p>
-				The LilyBot developers occasionally contribute to Kord Extensions, and they are responsible for a myriad of
-				features and fixes over the years.
-			</p>
-		</Project>
-
-		<Project
-			name="NabBot"
-			image="/projects/nabbot.png"
-
-			discordAddUrl="https://discord.com/oauth2/authorize?client_id=168155574725246976&permissions=138244779216&scope=bot%20applications.commands"
-			discordInvite="https://support.nabbot.xyz/"
-			donationUrl="https://patreon.nabbot.xyz/"
-			site="https://nabbot.xyz/"
-		>
-			<p>
-				NabBot is a Discord bot that integrates with Tibia, a MMORPG from 1997. It provides a variety of utility
-				commands, as well as an account-linking system, supporting linked roles based on your guild, level/death
-				announcements, wiki lookup commands, and much more.
-			</p>
-
-			<p>
-				NabBot is a long-running bot that recently moved to Kord Extensions. It's been recognised as a "Promoted
-				Fansite" by the Tibia developers since 2020, with nearly 23,000 users and just over 15,000 servers,
-				<a class="link" href="https://nabbot.xyz/stats/2023">according to their 2023 stats page</a>.
-			</p>
-		</Project>
-
-		<Button href="/projects" variant="accent">
-			More Projects <ArrowRight size="1.3em" class="ml-2" />
-		</Button>
 	</div>
 </Containers.Content>
