@@ -54,6 +54,8 @@ bots:
     site: "https://hyacinthbots.org/lily/"
     vcs: "https://github.com/HyacinthBots/LilyBot"
 
+    featured: true
+
     shortDescription: Moderation and utility bot.
 
     description: |-
@@ -68,6 +70,8 @@ bots:
 
     donationUrl: "https://patreon.nabbot.xyz/"
     site: "https://nabbot.xyz/"
+
+    featured: true
 
     shortDescription: Tibia (1997) integration and utility bot.
 
@@ -96,7 +100,7 @@ bots:
 
     vcs: "https://github.com/DRSchlaubi/Tonbrett"
 
-    shortDescription: Voting bot with pie charts.
+    shortDescription: Voting/polling bot with pie charts.
 
     description: |-
       Simple voting bot that can create pie charts from the results.

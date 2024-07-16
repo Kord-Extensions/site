@@ -34,6 +34,8 @@
 
 	$: {
 		allProjects = [...data.projects.bots, ...data.projects.libraries, ...data.projects.tools]
+			.filter(it => it.featured !== true)
+
 		projects = []
 
 		allProjects = allProjects.sort(() => 0.5 - Math.random())

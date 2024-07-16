@@ -12,6 +12,8 @@ export type Project = {
 
 	description: string
 	shortDescription: string
+
+	featured: boolean | undefined
 }
 
 export type Projects = {
