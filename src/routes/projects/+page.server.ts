@@ -1,6 +1,6 @@
 import YAML from "yaml";
 import fs from "fs";
-import type { Projects } from "$lib/projects";
+import type { Projects } from "$lib/types/projects";
 
 export const prerender = true;
 

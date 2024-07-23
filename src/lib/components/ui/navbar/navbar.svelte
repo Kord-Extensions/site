@@ -7,7 +7,7 @@
 
 	import Navbar from "$lib/components/ui/navbar/index";
 
-	import { X, Menu, Moon, RefreshCw, Sun, Home, Book, Languages, LayoutGrid, DollarSign } from "lucide-svelte";
+	import { X, Menu, Moon, RefreshCw, Sun, Home, Book, LayoutGrid, Glasses, Rss } from "lucide-svelte";
 	import { setMode } from "mode-watcher";
 
 	import Discord from "virtual:icons/simple-icons/discord";
@@ -44,6 +44,10 @@
 							<GitHub />
 						</Navbar.IconLink>
 
+						<Navbar.IconLink target="_blank" href="/blog/feed.rss">
+							<Rss />
+						</Navbar.IconLink>
+
 						<Drawer.Close
 							class="sm:ml-0 p-2 pr-3 mr-2 flex flex-row justify-between space-x-2 rounded border hover:bg-border">
 							<X size="1.5em" />
@@ -62,28 +66,22 @@
 						Home
 					</Navbar.DrawerLink>
 
+					<Navbar.DrawerLink href="/blog" bind:open={drawer0pen}>
+						<Glasses class="mr-2" size="1.5em" slot="icon" />
+
+						Blog
+					</Navbar.DrawerLink>
+
 					<Navbar.DrawerLink href="https://docs.kordex.dev" bind:open={drawer0pen}>
 						<Book class="mr-2" size="1.5em" slot="icon" />
 
 						Docs
 					</Navbar.DrawerLink>
 
-					<Navbar.DrawerLink href="https://ko-fi.com/gsc" bind:open={drawer0pen}>
-						<DollarSign class="mr-2" size="1.5em" slot="icon" />
-
-						Donate
-					</Navbar.DrawerLink>
-
 					<Navbar.DrawerLink href="/projects" bind:open={drawer0pen}>
 						<LayoutGrid class="mr-2" size="1.5em" slot="icon" />
 
 						Projects
-					</Navbar.DrawerLink>
-
-					<Navbar.DrawerLink href="https://hosted.weblate.org/engage/kord-extensions/" bind:open={drawer0pen}>
-						<Languages class="mr-2" size="1.5em" slot="icon" />
-
-						Translate
 					</Navbar.DrawerLink>
 				</div>
 			</div>
@@ -108,20 +106,16 @@
 					Kord Extensions
 				</Navbar.Header>
 
+				<Navbar.Link href="/blog">
+					Blog
+				</Navbar.Link>
+
 				<Navbar.Link href="https://docs.kordex.dev">
 					Docs
 				</Navbar.Link>
 
-				<Navbar.Link href="https://ko-fi.com/gsc">
-					Donate
-				</Navbar.Link>
-
 				<Navbar.Link href="/projects">
 					Projects
-				</Navbar.Link>
-
-				<Navbar.Link href="https://hosted.weblate.org/engage/kord-extensions/">
-					Translate
 				</Navbar.Link>
 			</div>
 		</div>
@@ -148,6 +142,18 @@
 
 				<Tooltip.Content>
 					<p>GitHub</p>
+				</Tooltip.Content>
+			</Tooltip.Root>
+
+			<Tooltip.Root>
+				<Tooltip.Trigger>
+					<Navbar.IconLink hideOnTinyScreens target="_blank" href="/blog/feed.rss">
+						<Rss />
+					</Navbar.IconLink>
+				</Tooltip.Trigger>
+
+				<Tooltip.Content>
+					<p>RSS Feed</p>
 				</Tooltip.Content>
 			</Tooltip.Root>
 

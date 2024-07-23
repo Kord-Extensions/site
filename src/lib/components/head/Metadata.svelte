@@ -1,8 +1,11 @@
 <script lang="ts">
 	import { page } from "$app/stores";
+	import type { Post } from "$lib/types/post"
 
 	export let description: string;
 	export let pageTitle: string | undefined = undefined;
+
+	export let post: Post | undefined = undefined;
 
 	let fullPageTitle = "Kord Extensions";
 
@@ -20,4 +23,16 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://kordex.dev${$page.url.pathname}" />
+
+	{#if post}
+		<meta property="og:article:author:username" content="Kord Extensions" />
+
+		{#if post.createdDate}
+			<meta property="og:article:published_time" content={post.createdDate.toISOString()} />
+		{/if}
+
+		{#if post.modifiedDate}
+			<meta property="og:article:modified_time" content={post.modifiedDate.toISOString()} />
+		{/if}
+	{/if}
 </svelte:head>

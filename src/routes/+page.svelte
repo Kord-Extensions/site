@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { Projects, Project } from "$lib/projects";
+	import type { Post } from "$lib/types/post";
+	import type { Projects, Project } from "$lib/types/projects";
 
 	import Metadata from "$lib/components/head/Metadata.svelte";
 
@@ -12,7 +13,7 @@
 	import CompactProject from "$lib/components/ui/project/grid-item-compact.svelte"
 	import FeaturedProject from "$lib/components/ui/project/project.svelte"
 
-	import { ArrowRight, ArrowDown } from "lucide-svelte";
+	import { ArrowRight, ArrowDown, Languages, DollarSign } from "lucide-svelte";
 
 	import Prism from "prismjs"
 
@@ -22,11 +23,11 @@
 
 	import "prismjs/components/prism-java"
 	import "prismjs/components/prism-scala"
-	import { Divider } from "$lib/components/ui/divider";
 
 	export let data: {
 		projects: Projects,
-		version: string
+		version: string,
+		posts: Post[]
 	}
 
 	let allProjects: Array<Project>;
@@ -48,6 +49,12 @@
 		projects.push(allProjects.pop()!)
 
 		projects = projects.sort((l, r) => l.name.localeCompare(r.name))
+	}
+
+	$: {
+		if (data.posts.length > 5) {
+			data.posts = data.posts.splice(5)
+		}
 	}
 
 	const groovyCode = `repositories {
@@ -158,7 +165,7 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 
 	<div class="mt-4 mb-2">
 		<h1 class="text-3xl font-semibold text-center">The premier, community-driven Discord bot framework for Kotlin</h1>
-		<div class="flex flex-col items-center mt-4">
+		<div class="flex flex-row justify-center items-center mt-4 space-x-2">
 			<Button
 				id="scroll-button"
 				href="#about"
@@ -168,6 +175,22 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 			>
 				<ArrowDown size="1.5rem" class="mr-1" />
 				Scroll to info
+			</Button>
+
+			<Button
+				href="https://hosted.weblate.org/engage/kord-extensions/"
+				class="shadow"
+			>
+				<Languages size="1.5rem" class="mr-1" />
+				Translate
+			</Button>
+
+			<Button
+				href="https://ko-fi.com/gsc"
+				variant="orange"
+			>
+				<DollarSign size="1.5rem" class="mr-1" />
+				Donate
 			</Button>
 		</div>
 	</div>
@@ -290,41 +313,38 @@ ${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
 		</section>
 
 		<section>
-			<h2 class="title font-semibold text-2xl mb-0">Build Config</h2>
+			<h2 class="title font-semibold text-2xl mb-0">Getting Started</h2>
 
 			<h3 class="sub-title text-muted-foreground mb-4">
-				For more information, see
+				To learn about Kord Extensions and how to get started, check out
 				<a class="link" href="https://docs.kordex.dev/getting-started.html">the Getting Started guide</a>.
 			</h3>
 
-			<Tabs.Root value="gradle-kt">
-				<Tabs.List class="w-full">
-					<Tabs.Trigger value="gradle-kt">Gradle (Kotlin)</Tabs.Trigger>
-					<Tabs.Trigger value="gradle-groovy">Gradle (Groovy)</Tabs.Trigger>
-					<Tabs.Trigger value="maven">Maven</Tabs.Trigger>
-					<Tabs.Trigger value="sbt">SBT</Tabs.Trigger>
-				</Tabs.List>
+			<h2 class="title font-semibold text-2xl mb-0">Blog Posts</h2>
 
-				<Tabs.Content value="gradle-kt">
-					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-					{@html kotlinHtml}
-				</Tabs.Content>
+			<h3 class="sub-title text-muted-foreground mb-2">
+				News and announcements about the project.
+			</h3>
 
-				<Tabs.Content value="gradle-groovy">
-					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-					{@html groovyHtml}
-				</Tabs.Content>
+			{#if data.posts.length > 0}
+				<ul class="list-disc pl-6 pb-2">
+					{#each data.posts as post}
+						<li class="mb-2">
+							<a class="link" href="/blog/{post.slug}">{post.title}</a>
+							{#if post.summary}
+								- <span class="text-muted-foreground">{post.summary}</span>
+							{/if}
+						</li>
+					{/each}
+				</ul>
 
-				<Tabs.Content value="maven">
-					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-					{@html mavenHtml}
-				</Tabs.Content>
+				<Button href="/blog" variant="secondary">
+					All Posts <ArrowRight size="1.3em" class="ml-2" />
+				</Button>
+			{:else}
+				No post have been written yet. Watch this space!
+			{/if}
 
-				<Tabs.Content value="sbt">
-					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-					{@html sbtHtml}
-				</Tabs.Content>
-			</Tabs.Root>
 		</section>
 	</div>
 </Containers.Content>

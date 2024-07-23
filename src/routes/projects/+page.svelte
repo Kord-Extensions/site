@@ -5,7 +5,7 @@
 	import Project from "$lib/components/ui/project/grid-item.svelte"
 
 	import Containers from "$lib/components/ui/containers"
-	import type { Projects } from "$lib/projects";
+	import type { Projects } from "$lib/types/projects";
 
 	export let data: {
 		projects: Projects,

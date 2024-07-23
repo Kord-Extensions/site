@@ -4,7 +4,7 @@
 
 	import { DollarSign, Dot, Plus, Code, Globe } from "lucide-svelte"
 	import Discord from "virtual:icons/simple-icons/discord";
-	import type { Project } from "$lib/projects";
+	import type { Project } from "$lib/types/projects";
 
 	export let project: Project
 </script>
