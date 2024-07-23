@@ -9,10 +9,13 @@
 	export let data: { posts: Post[] };
 
 	function transformPost(post: Post) {
-		// @ts-expect-error The server returns a String, rich parsing isn't possible.
-		post.createdDate = new Date(post.createdDate)
-		// @ts-expect-error The server returns a String, rich parsing isn't possible.
-		post.modifiedDate = new Date(post.modifiedDate)
+		if (post.createdDate) {
+			post.createdDate = new Date(post.createdDate);
+		}
+
+		if (post.modifiedDate) {
+			post.modifiedDate = new Date(post.modifiedDate)
+		}
 
 		return post
 	}

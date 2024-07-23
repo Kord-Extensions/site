@@ -25,7 +25,9 @@
 	<meta property="og:url" content="https://kordex.dev${$page.url.pathname}" />
 
 	{#if post}
-		<meta property="og:article:author:username" content="Kord Extensions" />
+		{#if post.author}
+			<meta property="og:article:author:username" content={post.author} />
+		{/if}
 
 		{#if post.createdDate}
 			<meta property="og:article:published_time" content={post.createdDate.toISOString()} />

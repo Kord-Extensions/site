@@ -1,7 +1,7 @@
 <script lang="ts">
 	/* eslint-disable no-import-assign */
 
-	import { Pencil, Sparkles } from "lucide-svelte";
+	import { Pencil, Sparkles, User } from "lucide-svelte";
 	import { getContext } from "svelte";
 	import Time from "svelte-time";
 	import twemoji from "twemoji";
@@ -68,8 +68,24 @@
 	<header class="grow-0 shrink-0">
 		<h1 class="mb-0 font-semibold text-3xl">{title}</h1>
 
-		{#if post && (post.createdDate || post.modifiedDate)}
+		{#if post && (post.author || post.createdDate || post.modifiedDate)}
 			<h5 class="mb-0 text-muted-foreground flex flex-row space-x-2 items-center" data-toc-ignore>
+				{#if post.author}
+					<Tooltip.Root>
+						<Tooltip.Trigger class="flex flex-row items-center">
+							<User size="1rem" class="mr-1" />
+							{post.author}
+						</Tooltip.Trigger>
+						<Tooltip.Content>
+							Post author: {post.author}
+						</Tooltip.Content>
+					</Tooltip.Root>
+				{/if}
+
+				{#if post.author && (post.createdDate || post.modifiedDate)}
+					<span>|</span>
+				{/if}
+
 				{#if post.createdDate}
 					<Tooltip.Root>
 						<Tooltip.Trigger class="flex flex-row items-center">
