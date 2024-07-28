@@ -4,8 +4,6 @@
 
 	import Metadata from "$lib/components/head/Metadata.svelte";
 
-	import * as Tabs from "$lib/components/ui/tabs";
-
 	import { Button } from "$lib/components/ui/button";
 	import Containers from "$lib/components/ui/containers"
 
@@ -14,15 +12,6 @@
 	import FeaturedProject from "$lib/components/ui/project/project.svelte"
 
 	import { ArrowRight, ArrowDown, Languages, DollarSign } from "lucide-svelte";
-
-	import Prism from "prismjs"
-
-	import "prismjs/components/prism-groovy"
-	import "prismjs/components/prism-kotlin"
-	import "prismjs/components/prism-markup"
-
-	import "prismjs/components/prism-java"
-	import "prismjs/components/prism-scala"
 
 	export let data: {
 		projects: Projects,
@@ -56,98 +45,6 @@
 			data.posts = data.posts.splice(5)
 		}
 	}
-
-	const groovyCode = `repositories {
-	mavenCentral()
-
-	maven {
-		name "Sonatype Snapshots (Legacy)"
-		url "https://oss.sonatype.org/content/repositories/snapshots"
-	}
-
-	maven {
-		name "Sonatype Snapshots"
-		url "https://s01.oss.sonatype.org/content/repositories/snapshots"
-	}
-}
-
-dependencies {
-	implementation "com.kotlindiscord.kord.extensions:kord-extensions:1.9.0-SNAPSHOT"
-}`
-
-	const kotlinCode = `repositories {
-	mavenCentral()
-
-	maven {
-		name = "Sonatype Snapshots (Legacy)"
-		url = uri("https://oss.sonatype.org/content/repositories/snapshots")
-	}
-
-	maven {
-		name = "Sonatype Snapshots"
-		url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
-	}
-}
-
-dependencies {
-	implementation("com.kotlindiscord.kord.extensions:kord-extensions:${data.version}")
-}`
-
-	const sbtCode = `resolvers += Resolver.sonatypeOssRepos("snapshots")
-
-libraryDependencies ++= Seq(
-	"com.kotlindiscord.kord.extensions" % "kord-extensions" % "${data.version}"
-)`
-
-	const mavenCode = `<repositories>
-	<repository>
-		<id>sonatype-snapshots-legacy</id>
-		<name>Sonatype Snapshots (Legacy)</name>
-		<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-	</repository>
-
-	<repository>
-		<id>sonatype-snapshots</id>
-		<name>Sonatype Snapshots</name>
-		<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-	</repository>
-</repositories>
-
-<dependencies>
-	<dependency>
-		<groupId>com.kotlindiscord.kord.extensions</groupId>
-		<artifactId>kord-extensions</artifactId>
-		<version>${data.version}</version>
-	</dependency>
-</dependencies>`
-
-	const groovyHtml = `
-<pre class="language-groovy rounded-lg border shadow-sm h-full">
-<code class="language-groovy">
-${Prism.highlight(groovyCode, Prism.languages.groovy, "groovy")}
-</code>
-</pre>`
-
-	const kotlinHtml = `
-<pre class="language-kotlin rounded-lg border shadow-sm h-full">
-<code class="language-kotlin">
-${Prism.highlight(kotlinCode, Prism.languages.kotlin, "kotlin")}
-</code>
-</pre>`
-
-	const sbtHtml = `
-<pre class="language-scala rounded-lg border shadow-sm h-full">
-<code class="language-scala">
-${Prism.highlight(sbtCode, Prism.languages.scala, "scala")}
-</code>
-</pre>`
-
-	const mavenHtml = `
-<pre class="language-xml rounded-lg border shadow-sm h-full">
-<code class="language-xml">
-${Prism.highlight(mavenCode, Prism.languages.xml, "xml")}
-</code>
-</pre>`
 
 </script>
 

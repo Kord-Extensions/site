@@ -7,7 +7,21 @@
 
 	import Navbar from "$lib/components/ui/navbar/index";
 
-	import { X, Menu, Moon, RefreshCw, Sun, Home, Book, LayoutGrid, Glasses, Rss } from "lucide-svelte";
+	import {
+		X,
+		Menu,
+		Moon,
+		Boxes,
+		RefreshCw,
+		Sun,
+		Home,
+		Book,
+		LayoutGrid,
+		Glasses,
+		Rss,
+		ChevronDown,
+		Languages, DollarSign,
+	} from "lucide-svelte";
 	import { setMode } from "mode-watcher";
 
 	import Discord from "virtual:icons/simple-icons/discord";
@@ -36,10 +50,6 @@
 <!--					<p class="p-2 ml-2 text-lg font-semibold">Main Menu</p>-->
 
 					<div class="flex flex-row space-x-2 mr-2">
-						<Navbar.IconLink target="_blank" href="https://discord.gg/nYzQWcjAmK">
-							<Discord />
-						</Navbar.IconLink>
-
 						<Navbar.IconLink target="_blank" href="https://github.com/kord-extensions/">
 							<GitHub />
 						</Navbar.IconLink>
@@ -66,6 +76,10 @@
 						Home
 					</Navbar.DrawerLink>
 
+					<Navbar.DrawerHeader borderTop>
+						Project
+					</Navbar.DrawerHeader>
+
 					<Navbar.DrawerLink href="/blog" bind:open={drawer0pen}>
 						<Glasses class="mr-2" size="1.5em" slot="icon" />
 
@@ -76,6 +90,40 @@
 						<Book class="mr-2" size="1.5em" slot="icon" />
 
 						Docs
+					</Navbar.DrawerLink>
+
+					<Navbar.DrawerLink href="https://ko-fi.com/gsc" bind:open={drawer0pen}>
+						<DollarSign class="mr-2" size="1.5em" slot="icon" />
+
+						Donate
+					</Navbar.DrawerLink>
+
+					<Navbar.DrawerLink href="https://repo.kordex.dev" bind:open={drawer0pen}>
+						<Boxes class="mr-2" size="1.5em" slot="icon" />
+
+						Maven Repo
+					</Navbar.DrawerLink>
+
+					<Navbar.DrawerLink href="https://hosted.weblate.org/engage/kord-extensions/" bind:open={drawer0pen}>
+						<Languages class="mr-2" size="1.5em" slot="icon" />
+
+						Translate
+					</Navbar.DrawerLink>
+
+					<Navbar.DrawerHeader borderTop>
+						Community
+					</Navbar.DrawerHeader>
+
+					<Navbar.DrawerLink href="https://discord.gg/nYzQWcjAmK" bind:open={drawer0pen}>
+						<Discord class="mr-2" style="height: 1.5em; width: 1.5em;" slot="icon" />
+
+						Discord Server
+					</Navbar.DrawerLink>
+
+					<Navbar.DrawerLink href="https://github.com/orgs/Kord-Extensions/discussions" bind:open={drawer0pen}>
+						<GitHub class="mr-2" style="height: 1.5em; width: 1.5em;" slot="icon" />
+
+						GitHub Discussions
 					</Navbar.DrawerLink>
 
 					<Navbar.DrawerLink href="/projects" bind:open={drawer0pen}>
@@ -106,33 +154,103 @@
 					Kord Extensions
 				</Navbar.Header>
 
-				<Navbar.Link href="/blog">
-					Blog
-				</Navbar.Link>
+				<DropdownMenu.Root>
+					<DropdownMenu.Trigger asChild let:builder>
+						<Button builders={[builder]} variant="ghost" class="font-normal text-lg transition-colors">
+							<ChevronDown size="1.5rem" class="mr-2" />
+							Project
+						</Button>
+					</DropdownMenu.Trigger>
 
-				<Navbar.Link href="https://docs.kordex.dev">
-					Docs
-				</Navbar.Link>
+					<DropdownMenu.Content align="start" class="mt-2.5">
+						<DropdownMenu.Group>
+							<DropdownMenu.Item class="cursor-pointer">
+								<a href="https://blog" class="flex flex-row text-lg items-center">
+									<Glasses size="1.5rem" class="mr-2" />
 
-				<Navbar.Link href="/projects">
-					Projects
+									Blog
+								</a>
+							</DropdownMenu.Item>
+
+							<DropdownMenu.Item class="cursor-pointer">
+								<a href="https://docs.kordex.dev" class="flex flex-row text-lg items-center">
+									<Book size="1.5rem" class="mr-2" />
+
+									Docs
+								</a>
+							</DropdownMenu.Item>
+
+							<DropdownMenu.Item class="cursor-pointer">
+								<a href="https://ko-fi.com/gsc" class="flex flex-row text-lg items-center">
+									<DollarSign size="1.5rem" class="mr-2" />
+
+									Donate
+								</a>
+							</DropdownMenu.Item>
+
+							<DropdownMenu.Item class="cursor-pointer">
+								<a href="https://repo.kordex.dev" class="flex flex-row text-lg items-center">
+									<Boxes size="1.5rem" class="mr-2" />
+
+									Maven Repo
+								</a>
+							</DropdownMenu.Item>
+
+							<DropdownMenu.Item class="cursor-pointer">
+								<a href="https://hosted.weblate.org/engage/kord-extensions/" class="flex flex-row text-lg items-center">
+									<Languages size="1.5rem" class="mr-2" />
+
+									Translate
+								</a>
+							</DropdownMenu.Item>
+						</DropdownMenu.Group>
+					</DropdownMenu.Content>
+				</DropdownMenu.Root>
+
+				<DropdownMenu.Root>
+					<DropdownMenu.Trigger asChild let:builder>
+						<Button builders={[builder]} variant="ghost" class="font-normal text-lg transition-colors">
+							<ChevronDown size="1.5rem" class="mr-2" />
+							Community
+						</Button>
+					</DropdownMenu.Trigger>
+
+					<DropdownMenu.Content align="start" class="mt-2.5">
+						<DropdownMenu.Group>
+							<DropdownMenu.Item class="cursor-pointer">
+								<a href="https://discord.gg/nYzQWcjAmK" class="flex flex-row text-lg items-center">
+									<Discord class="mr-2" style="height: 1.5rem; width: 1.5rem;" />
+
+									Discord Server
+								</a>
+							</DropdownMenu.Item>
+
+							<DropdownMenu.Item class="cursor-pointer">
+								<a href="https://github.com/orgs/Kord-Extensions/discussions" class="flex flex-row text-lg items-center">
+									<GitHub class="mr-2" style="height: 1.5rem; width: 1.5rem;" />
+
+									GitHub Discussions
+								</a>
+							</DropdownMenu.Item>
+
+							<DropdownMenu.Item class="cursor-pointer">
+								<a href="/projects" class="flex flex-row text-lg items-center">
+									<LayoutGrid size="1.5rem" class="mr-2" />
+
+									Projects
+								</a>
+							</DropdownMenu.Item>
+						</DropdownMenu.Group>
+					</DropdownMenu.Content>
+				</DropdownMenu.Root>
+
+				<Navbar.Link href="https://status.kordex.dev">
+					Status
 				</Navbar.Link>
 			</div>
 		</div>
 
 		<div class="flex items-center space-x-2">
-			<Tooltip.Root>
-				<Tooltip.Trigger>
-					<Navbar.IconLink hideOnTinyScreens target="_blank" href="https://discord.gg/nYzQWcjAmK">
-						<Discord />
-					</Navbar.IconLink>
-				</Tooltip.Trigger>
-
-				<Tooltip.Content>
-					<p>Discord Server</p>
-				</Tooltip.Content>
-			</Tooltip.Root>
-
 			<Tooltip.Root>
 				<Tooltip.Trigger>
 					<Navbar.IconLink hideOnTinyScreens target="_blank" href="https://github.com/kord-extensions/">
