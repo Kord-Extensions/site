@@ -165,7 +165,7 @@
 					<DropdownMenu.Content align="start" class="mt-2.5">
 						<DropdownMenu.Group>
 							<DropdownMenu.Item class="cursor-pointer">
-								<a href="https://blog" class="flex flex-row text-lg items-center">
+								<a href="/blog" class="flex flex-row text-lg items-center">
 									<Glasses size="1.5rem" class="mr-2" />
 
 									Blog
