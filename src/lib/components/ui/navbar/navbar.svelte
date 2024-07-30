@@ -154,95 +154,57 @@
 					Kord Extensions
 				</Navbar.Header>
 
-				<DropdownMenu.Root>
-					<DropdownMenu.Trigger asChild let:builder>
-						<Button builders={[builder]} variant="ghost" class="font-normal text-lg transition-colors">
-							<ChevronDown size="1.5rem" class="mr-2" />
-							Project
-						</Button>
-					</DropdownMenu.Trigger>
+				<Navbar.DropdownMenu name="Project">
+					<Navbar.DropdownItem href="/blog">
+						<Glasses class="mr-2" size="1.5rem" slot="icon" />
 
-					<DropdownMenu.Content align="start" class="mt-2.5">
-						<DropdownMenu.Group>
-							<DropdownMenu.Item class="cursor-pointer">
-								<a href="/blog" class="flex flex-row text-lg items-center">
-									<Glasses size="1.5rem" class="mr-2" />
+						Blog
+					</Navbar.DropdownItem>
 
-									Blog
-								</a>
-							</DropdownMenu.Item>
+					<Navbar.DropdownItem href="https://docs.kordex.dev">
+						<Book class="mr-2" size="1.5rem" slot="icon" />
 
-							<DropdownMenu.Item class="cursor-pointer">
-								<a href="https://docs.kordex.dev" class="flex flex-row text-lg items-center">
-									<Book size="1.5rem" class="mr-2" />
+						Docs
+					</Navbar.DropdownItem>
 
-									Docs
-								</a>
-							</DropdownMenu.Item>
+					<Navbar.DropdownItem href="https://ko-fi.com/gsc">
+						<DollarSign class="mr-2" size="1.5rem" slot="icon" />
 
-							<DropdownMenu.Item class="cursor-pointer">
-								<a href="https://ko-fi.com/gsc" class="flex flex-row text-lg items-center">
-									<DollarSign size="1.5rem" class="mr-2" />
+						Donate
+					</Navbar.DropdownItem>
 
-									Donate
-								</a>
-							</DropdownMenu.Item>
+					<Navbar.DropdownItem href="https://repo.kordex.dev">
+						<Boxes class="mr-2" size="1.5rem" slot="icon" />
 
-							<DropdownMenu.Item class="cursor-pointer">
-								<a href="https://repo.kordex.dev" class="flex flex-row text-lg items-center">
-									<Boxes size="1.5rem" class="mr-2" />
+						Maven Repo
+					</Navbar.DropdownItem>
 
-									Maven Repo
-								</a>
-							</DropdownMenu.Item>
+					<Navbar.DropdownItem href="https://hosted.weblate.org/engage/kord-extensions/">
+						<Languages class="mr-2" size="1.5rem" slot="icon" />
 
-							<DropdownMenu.Item class="cursor-pointer">
-								<a href="https://hosted.weblate.org/engage/kord-extensions/" class="flex flex-row text-lg items-center">
-									<Languages size="1.5rem" class="mr-2" />
+						Translate
+					</Navbar.DropdownItem>
+				</Navbar.DropdownMenu>
 
-									Translate
-								</a>
-							</DropdownMenu.Item>
-						</DropdownMenu.Group>
-					</DropdownMenu.Content>
-				</DropdownMenu.Root>
+				<Navbar.DropdownMenu name="Community">
+					<Navbar.DropdownItem href="https://discord.gg/nYzQWcjAmK">
+						<Discord class="mr-2" style="height: 1.5rem; width: 1.5rem;" slot="icon" />
 
-				<DropdownMenu.Root>
-					<DropdownMenu.Trigger asChild let:builder>
-						<Button builders={[builder]} variant="ghost" class="font-normal text-lg transition-colors">
-							<ChevronDown size="1.5rem" class="mr-2" />
-							Community
-						</Button>
-					</DropdownMenu.Trigger>
+						Discord Server
+					</Navbar.DropdownItem>
 
-					<DropdownMenu.Content align="start" class="mt-2.5">
-						<DropdownMenu.Group>
-							<DropdownMenu.Item class="cursor-pointer">
-								<a href="https://discord.gg/nYzQWcjAmK" class="flex flex-row text-lg items-center">
-									<Discord class="mr-2" style="height: 1.5rem; width: 1.5rem;" />
+					<Navbar.DropdownItem href="https://github.com/orgs/Kord-Extensions/discussions">
+						<GitHub class="mr-2" style="height: 1.5rem; width: 1.5rem;" slot="icon" />
 
-									Discord Server
-								</a>
-							</DropdownMenu.Item>
+						GitHub Discussions
+					</Navbar.DropdownItem>
 
-							<DropdownMenu.Item class="cursor-pointer">
-								<a href="https://github.com/orgs/Kord-Extensions/discussions" class="flex flex-row text-lg items-center">
-									<GitHub class="mr-2" style="height: 1.5rem; width: 1.5rem;" />
+					<Navbar.DropdownItem href="/projects">
+						<LayoutGrid class="mr-2" style="height: 1.5rem; width: 1.5rem;" slot="icon" />
 
-									GitHub Discussions
-								</a>
-							</DropdownMenu.Item>
-
-							<DropdownMenu.Item class="cursor-pointer">
-								<a href="/projects" class="flex flex-row text-lg items-center">
-									<LayoutGrid size="1.5rem" class="mr-2" />
-
-									Projects
-								</a>
-							</DropdownMenu.Item>
-						</DropdownMenu.Group>
-					</DropdownMenu.Content>
-				</DropdownMenu.Root>
+						Projects
+					</Navbar.DropdownItem>
+				</Navbar.DropdownMenu>
 
 				<Navbar.Link href="https://status.kordex.dev">
 					Status
