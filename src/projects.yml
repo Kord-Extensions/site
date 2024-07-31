@@ -98,7 +98,7 @@ bots:
 
     botInvite: "https://look-at.it/votebot"
 
-    vcs: "https://github.com/DRSchlaubi/Tonbrett"
+    vcs: "https://github.com/votebot/votebot-plugin"
 
     shortDescription: Voting/polling bot with pie charts.
 
