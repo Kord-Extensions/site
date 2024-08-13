@@ -11,11 +11,10 @@
 	import CompactProject from "$lib/components/ui/project/grid-item-compact.svelte"
 	import FeaturedProject from "$lib/components/ui/project/project.svelte"
 
-	import { ArrowRight, ArrowDown, Languages, DollarSign } from "lucide-svelte";
+	import { ArrowRight, ArrowDown, Languages, DollarSign, Info } from "lucide-svelte";
 
 	export let data: {
 		projects: Projects,
-		version: string,
 		posts: Post[]
 	}
 
@@ -90,6 +89,24 @@
 				Donate
 			</Button>
 		</div>
+	</div>
+</Containers.Content>
+
+<Containers.Content class="bg-secondary bg-opacity-50 !m-0 !p-0 bg-center bg-cover bg-no-repeat"
+                    style="background-image: url('/unsplash/fireworks.jpg')">
+	<div class="flex flex-row">
+		<div class="flex-grow">&nbsp;</div>
+
+		<div class="bg-secondary p-5 m-1 text-xl text-center font-semibold my-2 rounded flex flex-row items-center">
+			<span>Kord Extensions 2 is here!</span>
+
+			<Button href="https://docs.kordex.dev/about.html#version-2" variant="default" class="ml-4 text-lg">
+				<Info size="1.2em" class="mr-2" />
+				<span>Learn more</span>
+			</Button>
+		</div>
+
+		<div class="flex-grow">&nbsp;</div>
 	</div>
 </Containers.Content>
 

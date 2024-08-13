@@ -5,6 +5,8 @@
 	type Props = HTMLAttributes<HTMLDivElement>;
 	let className: Props["class"] = undefined;
 
+	export let style: string | undefined = undefined;
+
 	export { className as class };
 </script>
 
@@ -13,6 +15,8 @@
 		"px-5 md:px-12 lg:px-24 py-4",
 		className
 	)}
+
+	{style}
 >
 	<slot />
 </div>

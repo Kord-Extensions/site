@@ -8,19 +8,20 @@
 	import Navbar from "$lib/components/ui/navbar/index";
 
 	import {
-		X,
+		Book,
+		Boxes,
+		DollarSign,
+		Glasses,
+		Home,
+		Languages,
+		LayoutGrid,
 		Menu,
 		Moon,
-		Boxes,
 		RefreshCw,
-		Sun,
-		Home,
-		Book,
-		LayoutGrid,
-		Glasses,
 		Rss,
-		ChevronDown,
-		Languages, DollarSign,
+		Scale,
+		Sun,
+		X,
 	} from "lucide-svelte";
 	import { setMode } from "mode-watcher";
 
@@ -98,6 +99,12 @@
 						Donate
 					</Navbar.DrawerLink>
 
+					<Navbar.DrawerLink href="https://docs.kordex.dev/licensing.html" bind:open={drawer0pen}>
+						<Scale class="mr-2" size="1.5em" slot="icon" />
+
+						Licensing Info
+					</Navbar.DrawerLink>
+
 					<Navbar.DrawerLink href="https://repo.kordex.dev" bind:open={drawer0pen}>
 						<Boxes class="mr-2" size="1.5em" slot="icon" />
 
@@ -171,6 +178,12 @@
 						<DollarSign class="mr-2" size="1.5rem" slot="icon" />
 
 						Donate
+					</Navbar.DropdownItem>
+
+					<Navbar.DropdownItem href="https://docs.kordex.dev/licensing.html">
+						<Scale class="mr-2" size="1.5rem" slot="icon" />
+
+						Licensing Info
 					</Navbar.DropdownItem>
 
 					<Navbar.DropdownItem href="https://repo.kordex.dev">

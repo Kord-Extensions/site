@@ -43,12 +43,6 @@
 					</Button>
 				{/if}
 
-				{#if vcs !== undefined}
-					<Button href={vcs} variant="secondary" size="sm" title="Source Code">
-						<Code size="1rem" />
-					</Button>
-				{/if}
-
 				{#if donationUrl !== undefined}
 					<Button href={donationUrl} variant="secondary" size="sm" title="Donations">
 						<DollarSign size="1rem" />
