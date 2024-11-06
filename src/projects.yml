@@ -28,6 +28,21 @@ bots:
       A TTRPG utility bot, including an advanced dice-roller, and with support for a wide range of game systems.
       Upcoming features include an initiative tracker, and potential integration with Discord Activities.
 
+  - name: Blanketbot
+    author: NotJansel
+    license: GPL 3.0
+
+    botInvite: "https://discord.com/oauth2/authorize?client_id=1130933938408403034"
+
+    donationUrl: "https://ko-fi.com/jansel"
+    vcs: "https://github.com/NotJansel/Feixiao/tree/root"
+
+    shortDescription: Stream notification bot.
+
+    description: |-
+      A Discord bot that can notify when your favourite Twitch streamer goes live.
+      Lets you set up channels to follow specific Twitch streamers, optionally pinging a role when a stream starts.
+
   - name: kose kata
     author: mazziechai
     license: MPL 2.0
