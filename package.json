@@ -44,7 +44,7 @@
     "@sveltejs/adapter-static": "^3.0.1",
     "@tailwindcss/typography": "^0.5.12",
     "@types/prismjs": "^1.26.4",
-    "axios": "^1.7.2",
+    "axios": "^1.7.4",
     "bits-ui": "^0.21.1",
     "clsx": "^2.1.0",
     "fast-xml-parser": "^4.5.1",
