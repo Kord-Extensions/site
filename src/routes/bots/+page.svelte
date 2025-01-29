@@ -49,6 +49,7 @@
 
 <Metadata
 	description="The premier Kotlin Discord bot framework."
+	pageTitle="Bots"
 />
 
 <Containers.Content class="bg-accent py-6">
