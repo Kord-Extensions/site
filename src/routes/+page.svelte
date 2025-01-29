@@ -51,214 +51,159 @@
 	description="The premier Kotlin Discord bot framework."
 />
 
-<Containers.Content class="bg-accent py-10">
-	<div class="my-4">
+<Containers.Content class="bg-secondary py-6">
+	<div class="my-4 lg:hidden">
 		<picture>
 			<img src="/banner-light.svg" alt="Kord Extensions" class="banner-image hidden mx-auto dark:block"/>
 			<img src="/banner-dark.svg" alt="Kord Extensions" class="banner-image block mx-auto dark:hidden"/>
 		</picture>
 	</div>
 
-	<div class="mt-4 mb-2">
-		<h1 class="text-3xl font-semibold text-center">The premier, community-driven Discord bot framework for Kotlin</h1>
-		<div class="flex flex-row justify-center items-center mt-4 space-x-2">
-			<Button
-				id="scroll-button"
-				href="#about"
-				variant="secondary"
-				class="motion-safe:animate-bounce shadow"
-				style="animation-iteration-count: 2.53;"
-			>
-				<ArrowDown size="1.5rem" class="mr-1" />
-				Scroll to info
-			</Button>
-
-			<Button
-				href="https://hosted.weblate.org/engage/kord-extensions/"
-				class="shadow"
-			>
-				<Languages size="1.5rem" class="mr-1" />
-				Translate
-			</Button>
-
-			<Button
-				href="https://ko-fi.com/gsc"
-				variant="orange"
-			>
-				<DollarSign size="1.5rem" class="mr-1" />
-				Donate
-			</Button>
-		</div>
-	</div>
-</Containers.Content>
-
-<Containers.Content class="bg-secondary bg-opacity-50 !m-0 !p-0 bg-center bg-cover bg-no-repeat"
-                    style="background-image: url('/unsplash/fireworks.jpg')">
-	<div class="flex flex-row">
-		<div class="flex-grow">&nbsp;</div>
-
-		<div class="bg-secondary p-5 m-1 text-xl text-center font-semibold my-2 rounded flex flex-row items-center">
-			<span>Kord Extensions 2 is here!</span>
-
-			<Button href="https://docs.kordex.dev/about.html#version-2" variant="default" class="ml-4 text-lg">
-				<Info size="1.2em" class="mr-2" />
-				<span>Learn more</span>
-			</Button>
+	<div class="hidden lg:grid grid-cols-2">
+		<div class="my-4">
+			<picture>
+				<img src="/banner-light.svg" alt="Kord Extensions" class="banner-image hidden mx-auto dark:block"/>
+				<img src="/banner-dark.svg" alt="Kord Extensions" class="banner-image block mx-auto dark:hidden"/>
+			</picture>
 		</div>
 
-		<div class="flex-grow">&nbsp;</div>
-	</div>
-</Containers.Content>
-
-<Containers.Content>
-	<div class="flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0">
-		<FeaturedProject
-			name="LilyBot"
-			image="/projects/lilybot.png"
-			padImage
-
-			discordAddUrl="https://discord.com/api/oauth2/authorize?client_id=876278900836139008&permissions=1151990787078&scope=bot%20applications.commands"
-			discordInvite="https://discord.gg/hy2329fcTZ"
-			donationUrl="https://buymeacoffee.com/Hyacinthbots"
-			site="https://hyacinthbots.org/lily/"
-			vcs="https://github.com/HyacinthBots/LilyBot/tree/main"
-		>
-			<p>
-				LilyBot is an open-source, general-purpose Discord bot with a focus on moderation tooling and general utilities.
-				It was originally developed by members of <a href="https://www.irisshaders.dev/">the Iris project</a>, but has
-				since grown in scope and been split off into <a href="https://hyacinthbots.org/">the Hyacinth Bots organisation</a>.
-			</p>
-
-			<p>
-				The LilyBot developers occasionally contribute to Kord Extensions, and they are responsible for a myriad of
-				features and fixes over the years.
-			</p>
-		</FeaturedProject>
-
-		<div class="self-center border-t pb-1 h-0 w-full md:border-r md:h-64 md:w-0 md:pb-0"></div>
-
-		<FeaturedProject
-			name="NabBot"
-			image="/projects/nabbot.png"
-
-			discordAddUrl="https://discord.com/oauth2/authorize?client_id=168155574725246976&permissions=138244779216&scope=bot%20applications.commands"
-			discordInvite="https://support.nabbot.xyz/"
-			donationUrl="https://patreon.nabbot.xyz/"
-			site="https://nabbot.xyz/"
-		>
-			<p>
-				NabBot is a Discord bot that integrates with Tibia, a MMORPG from 1997. It provides a variety of utility
-				commands, as well as an account-linking system, supporting linked roles based on your guild, level/death
-				announcements, wiki lookup commands, and much more.
-			</p>
-
-			<p>
-				NabBot is a long-running bot that recently moved to Kord Extensions. It's been recognised as a "Promoted
-				Fansite" by the Tibia developers since 2020, with nearly 23,000 users and just over 15,000 servers,
-				<a class="link" href="https://nabbot.xyz/stats/2023">according to their 2023 stats page</a>.
-			</p>
-		</FeaturedProject>
-	</div>
-
-	<hr class="block md:hidden mt-6" />
-
-	<Grid centered>
-		{#each projects as project}
-			<CompactProject {project} />
-		{/each}
-
-		<Button href="/projects" variant="accent" size="lg">
-			More Projects <ArrowRight size="1.3em" class="ml-2" />
-		</Button>
-	</Grid>
-</Containers.Content>
-
-<hr />
-
-<Containers.Content>
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-		<section>
-			<h2 class="title font-semibold text-2xl mb-0" id="about">About Kord Extensions</h2>
-
-			<p>
-				Kord Extensions (AKA KordEx) is a Discord bot framework built on top of
-				<a class="link" href="https://kord.dev/">the excellent Kord library</a>.
-				It provides a framework for Discord bots of all sizes, with easy-to-use commands, rich argument parsing, and
-				many more useful features.
-			</p>
-
-			<p class="mt-4">
-				KordEx provides an idiomatic API that makes full use of Kotlin's niceties.
-				Instead of providing a light DSL wrapper meant for prototyping or implementing small bots, KordEx takes
-				inspiration from
-				<a class="link" href="https://docs.pycord.dev/en/stable/ext/commands/cogs.html">PyCord's Cogs feature</a>,
-				keeping your bot's code organised into distinct modules.
-			</p>
-
-			<p class="mt-4">
-				KordEx was built from the ground up with a priority on the developer experience, and we believe the code speaks
-				for itself.
-				If you're new to KordEx, we recommend checking out
-				<a class="link" href="https://github.com/kord-extensions/template">the template project</a> and the
-				<a class="link" href="https://docs.kordex.dev/beginner-tutorial">beginner tutorial</a>.
-			</p>
-
-			<p class="mt-4">
-				Alternatively, KordEx has
-				<a class="link" href="https://discord.gg/nYzQWcjAmK">a small but dedicated community on Discord</a>.
-			</p>
-
-			<hr class="my-5" />
-
-			<h2 class="title font-semibold text-2xl mb-0">Useful Links</h2>
-
-			<div>
-				<ul class="list-disc ml-5 space-y-1 mt-1">
-					<li><a class="link" href="https://github.com/Kord-Extensions/kord-extensions">GitHub repo</a></li>
-					<li><a class="link" href="https://www.answeroverflow.com/c/1121419906995458098">Indexed support questions</a></li>
-					<li><a class="link" href="https://kord.dev/">Kord's documentation</a></li>
-					<li><a class="link" href="https://discord.gg/nYzQWcjAmK">Official Discord server</a></li>
-					<li><a class="link" href="https://docs.kordex.dev/">Official documentation</a></li>
-					<li><a class="link" href="https://hosted.weblate.org/engage/kord-extensions/">Weblate (crowdsourced translations)</a></li>
-				</ul>
-			</div>
-
-			<hr class="mt-5 md:hidden" />
-		</section>
-
-		<section>
-			<h2 class="title font-semibold text-2xl mb-0">Getting Started</h2>
-
-			<h3 class="sub-title text-muted-foreground mb-4">
-				To learn about Kord Extensions and how to get started, check out
-				<a class="link" href="https://docs.kordex.dev/getting-started.html">the Getting Started guide</a>.
-			</h3>
-
-			<h2 class="title font-semibold text-2xl mb-0">Blog Posts</h2>
-
-			<h3 class="sub-title text-muted-foreground mb-2">
-				News and announcements about the project.
-			</h3>
+		<div class="text-right flex flex-col">
+			<h1 class="title font-semibold text-3xl mb-4 data-toc-ignore">
+				Latest Blog Posts
+			</h1>
 
 			{#if data.posts.length > 0}
-				<ul class="list-disc pl-6 pb-2">
-					{#each data.posts as post}
+				<ul class="pb-4 list-none">
+					{#each data.posts.slice(0, 2) as post}
 						<li class="mb-2">
 							<a class="link" href="/blog/{post.slug}">{post.title}</a>
 							{#if post.summary}
-								- <span class="text-muted-foreground">{post.summary}</span>
+								<p>
+									<span class="text-muted-foreground">{post.summary}</span>
+								</p>
 							{/if}
 						</li>
 					{/each}
 				</ul>
 
-				<Button href="/blog" variant="secondary">
+				<span class="flex-grow"></span>
+
+				<Button href="/blog" variant="default" style="width: fit-content" class="place-self-end">
 					All Posts <ArrowRight size="1.3em" class="ml-2" />
 				</Button>
 			{:else}
 				No post have been written yet. Watch this space!
 			{/if}
-
-		</section>
+		</div>
 	</div>
 </Containers.Content>
+
+<div class="mx-4 pt-3 pb-0 mb-0 grid grid-cols-s md:grid-cols-2 md:space-x-4">
+	<div class="bg-accent rounded p-4 pb-0 mb-0 flex flex-col items-center text-center rounded-b-none border-b border-muted-foreground">
+		<h1 class="title font-semibold text-3xl mb-0" data-toc-ignore>
+			Discord Bot Framework
+		</h1>
+
+		<p class="mt-1 mb-3 text-muted-foreground">
+			The premier, community-driven Discord bot framework for Kotlin.
+		</p>
+
+		<p class="mb-6">
+			Built on top of <a class="link" href="https://kord.dev/">the excellent Kord library</a>,
+			and providing a rich suite of tools for Discord bots of all sizes, including an easy-to-use
+			command framework, rich argument parsing, <a class="link" href="https://sentry.io/">Sentry</a>
+			integration, and much more.
+		</p>
+
+		<p class="mb-6">
+			Includes optional first-party modules providing phishing link protection,
+			<a class="link" href="https://pluralkit.me/">PluralKit</a> integration, a basic tag system,
+			a welcome channel manager, and more.
+		</p>
+
+		<p class="mb-6">
+			Trusted by large bots like <a class="link" href="https://hyacinthbots.org/lily/">LilyBot</a>
+			and <a class="link" href="https://nabbot.xyz/">NabBot</a>.
+		</p>
+	</div>
+
+	<a href="/bots"
+	   class="bg-muted hover:bg-muted-foreground rounded text-center text-3xl rounded-t-none mb-4 md:hidden"
+	   style="height: 5rem; line-height: 5rem;"
+	>
+		Tap here to learn more.
+	</a>
+
+	<div class="bg-accent rounded p-4 flex flex-col items-center text-center pb-0 mb-0 rounded-b-none border-b border-muted-foreground">
+		<h1 class="title font-semibold text-3xl mb-0" data-toc-ignore>
+			Internationalisation Tools
+		</h1>
+
+		<p class="mt-1 mb-3 text-muted-foreground">
+			The modular, multi-format i18n toolkit for Kotlin.
+		</p>
+
+		<p class="mb-6">
+			A new i18n library and Gradle plugin, providing type-safe translations, a rich API, and
+			support for mixing file and message formats &mdash; while minimizing magic and unexpected
+			behaviour.
+		</p>
+
+		<p class="mb-6">
+			We're unsatisfied with how most i18n toolkits work &mdash; we feel that many of them are
+			unintuitive and don't take full advantage of the ecosystems they exist for.
+		</p>
+
+		<p class="mb-6">
+			This work-in-progress toolkit aims to fix that.
+		</p>
+	</div>
+
+	<p class="bg-muted cursor-not-allowed rounded text-center text-3xl rounded-t-none mb-4 md:hidden"
+	   style="height: 5rem; line-height: 5rem;"
+	>
+		Check back soon!
+	</p>
+</div>
+
+<div class="mx-4 !mt-0 !mb-4 grid-cols-s md:grid-cols-2 space-y-4 md:space-x-4 md:space-y-0 hidden md:grid">
+	<a href="/bots"
+	   class="bg-muted hover:bg-muted-foreground rounded text-center text-3xl rounded-t-none"
+	   style="height: 5rem; line-height: 5rem;"
+	>
+		Click here to learn more.
+	</a>
+
+	<p class="bg-muted cursor-not-allowed rounded text-center text-3xl rounded-t-none"
+	   style="height: 5rem; line-height: 5rem;"
+	>
+		Check back soon!
+	</p>
+</div>
+
+<div class="bg-yellow-100 dark:bg-yellow-950 rounded mx-4 p-4 !mt-0 col-span-2 text-center lg:hidden">
+	<h1 class="title font-semibold text-3xl mb-4 data-toc-ignore">
+		Latest Blog Posts
+	</h1>
+
+	{#if data.posts.length > 0}
+		<ul class="pb-4">
+			{#each data.posts as post}
+				<li class="mb-2">
+					<a class="link" href="/blog/{post.slug}">{post.title}</a>
+					{#if post.summary}
+						<p>
+							<span class="text-muted-foreground">{post.summary}</span>
+						</p>
+					{/if}
+				</li>
+			{/each}
+		</ul>
+
+		<Button href="/blog" variant="default">
+			All Posts <ArrowRight size="1.3em" class="ml-2" />
+		</Button>
+	{:else}
+		No post have been written yet. Watch this space!
+	{/if}
+</div>

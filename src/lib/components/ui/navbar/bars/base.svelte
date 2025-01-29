@@ -8,20 +8,18 @@
 	import Navbar from "$lib/components/ui/navbar/index";
 
 	import {
-		Book,
-		Boxes,
-		DollarSign,
+		Activity,
+		Book, Bot,
 		Glasses,
-		Home,
-		Languages,
-		LayoutGrid,
+		Home, Languages,
 		Menu,
 		Moon,
 		RefreshCw,
 		Rss,
-		Scale,
 		Sun,
 		X,
+
+
 	} from "lucide-svelte";
 	import { setMode } from "mode-watcher";
 
@@ -51,7 +49,11 @@
 <!--					<p class="p-2 ml-2 text-lg font-semibold">Main Menu</p>-->
 
 					<div class="flex flex-row space-x-2 mr-2">
-						<Navbar.IconLink target="_blank" href="https://github.com/kord-extensions/">
+						<Navbar.IconLink target="_blank" href="https://status.kordex.dev">
+							<Activity />
+						</Navbar.IconLink>
+
+						<Navbar.IconLink target="_blank" href="https://github.com/Kord-Extensions/">
 							<GitHub />
 						</Navbar.IconLink>
 
@@ -62,7 +64,6 @@
 						<Drawer.Close
 							class="sm:ml-0 p-2 pr-3 mr-2 flex flex-row justify-between space-x-2 rounded border hover:bg-border">
 							<X size="1.5em" />
-							<span>Close</span>
 						</Drawer.Close>
 					</div>
 				</div>
@@ -78,7 +79,7 @@
 					</Navbar.DrawerLink>
 
 					<Navbar.DrawerHeader borderTop>
-						Project
+						Sections
 					</Navbar.DrawerHeader>
 
 					<Navbar.DrawerLink href="/blog" bind:open={drawer0pen}>
@@ -87,57 +88,17 @@
 						Blog
 					</Navbar.DrawerLink>
 
-					<Navbar.DrawerLink href="https://docs.kordex.dev" bind:open={drawer0pen}>
-						<Book class="mr-2" size="1.5em" slot="icon" />
+					<Navbar.DrawerLink href="/bots" bind:open={drawer0pen}>
+						<Bot class="mr-2" size="1.5em" slot="icon" />
 
-						Docs
+						Discord Bots
 					</Navbar.DrawerLink>
 
-					<Navbar.DrawerLink href="https://ko-fi.com/gsc" bind:open={drawer0pen}>
-						<DollarSign class="mr-2" size="1.5em" slot="icon" />
+<!--					<Navbar.DrawerLink href="https://docs.kordex.dev" bind:open={drawer0pen}>-->
+<!--						<Languages class="mr-2" size="1.5em" slot="icon" />-->
 
-						Donate
-					</Navbar.DrawerLink>
-
-					<Navbar.DrawerLink href="https://docs.kordex.dev/licensing.html" bind:open={drawer0pen}>
-						<Scale class="mr-2" size="1.5em" slot="icon" />
-
-						Licensing Info
-					</Navbar.DrawerLink>
-
-					<Navbar.DrawerLink href="https://repo.kordex.dev" bind:open={drawer0pen}>
-						<Boxes class="mr-2" size="1.5em" slot="icon" />
-
-						Maven Repo
-					</Navbar.DrawerLink>
-
-					<Navbar.DrawerLink href="https://hosted.weblate.org/engage/kord-extensions/" bind:open={drawer0pen}>
-						<Languages class="mr-2" size="1.5em" slot="icon" />
-
-						Translate
-					</Navbar.DrawerLink>
-
-					<Navbar.DrawerHeader borderTop>
-						Community
-					</Navbar.DrawerHeader>
-
-					<Navbar.DrawerLink href="https://discord.gg/nYzQWcjAmK" bind:open={drawer0pen}>
-						<Discord class="mr-2" style="height: 1.5em; width: 1.5em;" slot="icon" />
-
-						Discord Server
-					</Navbar.DrawerLink>
-
-					<Navbar.DrawerLink href="https://github.com/orgs/Kord-Extensions/discussions" bind:open={drawer0pen}>
-						<GitHub class="mr-2" style="height: 1.5em; width: 1.5em;" slot="icon" />
-
-						GitHub Discussions
-					</Navbar.DrawerLink>
-
-					<Navbar.DrawerLink href="/projects" bind:open={drawer0pen}>
-						<LayoutGrid class="mr-2" size="1.5em" slot="icon" />
-
-						Projects
-					</Navbar.DrawerLink>
+<!--						Internationalisation (i18n)-->
+<!--					</Navbar.DrawerLink>-->
 				</div>
 			</div>
 		</Drawer.Content>
@@ -161,74 +122,42 @@
 					Kord Extensions
 				</Navbar.Header>
 
-				<Navbar.DropdownMenu name="Project">
-					<Navbar.DropdownItem href="/blog">
-						<Glasses class="mr-2" size="1.5rem" slot="icon" />
+				<Navbar.Link href="/blog">
+					<Glasses class="mr-2" size="1.5em" />
 
-						Blog
-					</Navbar.DropdownItem>
-
-					<Navbar.DropdownItem href="https://docs.kordex.dev">
-						<Book class="mr-2" size="1.5rem" slot="icon" />
-
-						Docs
-					</Navbar.DropdownItem>
-
-					<Navbar.DropdownItem href="https://ko-fi.com/gsc">
-						<DollarSign class="mr-2" size="1.5rem" slot="icon" />
-
-						Donate
-					</Navbar.DropdownItem>
-
-					<Navbar.DropdownItem href="https://docs.kordex.dev/licensing.html">
-						<Scale class="mr-2" size="1.5rem" slot="icon" />
-
-						Licensing Info
-					</Navbar.DropdownItem>
-
-					<Navbar.DropdownItem href="https://repo.kordex.dev">
-						<Boxes class="mr-2" size="1.5rem" slot="icon" />
-
-						Maven Repo
-					</Navbar.DropdownItem>
-
-					<Navbar.DropdownItem href="https://hosted.weblate.org/engage/kord-extensions/">
-						<Languages class="mr-2" size="1.5rem" slot="icon" />
-
-						Translate
-					</Navbar.DropdownItem>
-				</Navbar.DropdownMenu>
-
-				<Navbar.DropdownMenu name="Community">
-					<Navbar.DropdownItem href="https://discord.gg/nYzQWcjAmK">
-						<Discord class="mr-2" style="height: 1.5rem; width: 1.5rem;" slot="icon" />
-
-						Discord Server
-					</Navbar.DropdownItem>
-
-					<Navbar.DropdownItem href="https://github.com/orgs/Kord-Extensions/discussions">
-						<GitHub class="mr-2" style="height: 1.5rem; width: 1.5rem;" slot="icon" />
-
-						GitHub Discussions
-					</Navbar.DropdownItem>
-
-					<Navbar.DropdownItem href="/projects">
-						<LayoutGrid class="mr-2" style="height: 1.5rem; width: 1.5rem;" slot="icon" />
-
-						Projects
-					</Navbar.DropdownItem>
-				</Navbar.DropdownMenu>
-
-				<Navbar.Link href="https://status.kordex.dev">
-					Status
+					Blog
 				</Navbar.Link>
+
+				<Navbar.Link href="/bots">
+					<Bot class="mr-2" size="1.5em" />
+
+					Bots
+				</Navbar.Link>
+
+<!--				<Navbar.Link href="/i18n">-->
+<!--					<Languages class="mr-2" size="1.5em" />-->
+
+<!--					I18n-->
+<!--				</Navbar.Link>-->
 			</div>
 		</div>
 
 		<div class="flex items-center space-x-2">
 			<Tooltip.Root>
 				<Tooltip.Trigger>
-					<Navbar.IconLink hideOnTinyScreens target="_blank" href="https://github.com/kord-extensions/">
+					<Navbar.IconLink hideOnTinyScreens={true} target="_blank" href="https://status.kordex.dev">
+						<Activity />
+					</Navbar.IconLink>
+				</Tooltip.Trigger>
+
+				<Tooltip.Content>
+					<p>Service Status</p>
+				</Tooltip.Content>
+			</Tooltip.Root>
+
+			<Tooltip.Root>
+				<Tooltip.Trigger>
+					<Navbar.IconLink hideOnTinyScreens target="_blank" href="https://github.com/Kord-Extensions/">
 						<GitHub />
 					</Navbar.IconLink>
 				</Tooltip.Trigger>

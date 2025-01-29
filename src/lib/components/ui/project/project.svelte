@@ -10,7 +10,8 @@
 	export let padImage: boolean = false
 
 	export let site: string | undefined = undefined
-	export let vcs: string | undefined = undefined
+
+	// export let vcs: string | undefined = undefined
 
 	export let discordAddUrl: string | undefined = undefined
 	export let discordInvite: string | undefined = undefined
