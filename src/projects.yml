@@ -7,7 +7,7 @@ bots:
     serverInvite: "https://discord.gg/hy2329fcTZ"
 
     donationUrl: "https://ko-fi.com/jansel"
-    site: "https://hyacinthbots.org/allium/"
+    site: "https://hyacinthbots.org/bots/allium/about-allium"
     vcs: "https://github.com/HyacinthBots/Allium"
 
     shortDescription: Utility bot for Minecraft modding.
@@ -66,7 +66,7 @@ bots:
     serverInvite: "https://discord.gg/hy2329fcTZ"
 
     donationUrl: "https://buymeacoffee.com/Hyacinthbots"
-    site: "https://hyacinthbots.org/lily/"
+    site: "https://hyacinthbots.org/bots/lily/about-lily"
     vcs: "https://github.com/HyacinthBots/LilyBot"
 
     featured: true

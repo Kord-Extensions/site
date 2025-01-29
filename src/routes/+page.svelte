@@ -88,11 +88,32 @@
 
 				<span class="flex-grow"></span>
 
-				<Button href="/blog" variant="default" style="width: fit-content" class="place-self-end">
-					All Posts <ArrowRight size="1.3em" class="ml-2" />
-				</Button>
+				<div class="flex flex-row items-end content-end place-self-end space-x-4">
+					<Button
+						href="https://ko-fi.com/gsc"
+						variant="orange"
+					>
+						<DollarSign size="1.5rem"/>
+						Donate
+					</Button>
+
+					<Button href="/blog" variant="default">
+						All Posts <ArrowRight size="1.3em" class="ml-2" />
+					</Button>
+				</div>
 			{:else}
-				No post have been written yet. Watch this space!
+				<p class="mb-4">
+					No posts have been written yet. Watch this space!
+				</p>
+
+				<Button
+					href="https://ko-fi.com/gsc"
+					variant="orange"
+				>
+					<DollarSign size="1.5rem"/>
+
+					Donate
+				</Button>
 			{/if}
 		</div>
 	</div>
@@ -122,7 +143,7 @@
 		</p>
 
 		<p class="mb-6">
-			Trusted by large bots like <a class="link" href="https://hyacinthbots.org/lily/">LilyBot</a>
+			Trusted by large bots like <a class="link" href="https://hyacinthbots.org/bots/lily/about-lily">LilyBot</a>
 			and <a class="link" href="https://nabbot.xyz/">NabBot</a>.
 		</p>
 	</div>
@@ -200,10 +221,35 @@
 			{/each}
 		</ul>
 
-		<Button href="/blog" variant="default">
-			All Posts <ArrowRight size="1.3em" class="ml-2" />
-		</Button>
+		<div class="flex flex-row space-x-4">
+			<span class="flex-grow"></span>
+
+			<Button
+				href="https://ko-fi.com/gsc"
+				variant="orange"
+			>
+				<DollarSign size="1.5rem"/>
+				Donate
+			</Button>
+
+			<Button href="/blog" variant="default">
+				All Posts <ArrowRight size="1.3em" class="ml-2" />
+			</Button>
+
+			<span class="flex-grow"></span>
+		</div>
 	{:else}
-		No post have been written yet. Watch this space!
+		<p class="mb-4">
+			No posts have been written yet. Watch this space!
+		</p>
+
+		<Button
+			href="https://ko-fi.com/gsc"
+			variant="orange"
+		>
+			<DollarSign size="1.5rem"/>
+
+			Donate
+		</Button>
 	{/if}
 </div>

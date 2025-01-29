@@ -102,7 +102,7 @@
 			discordAddUrl="https://discord.com/api/oauth2/authorize?client_id=876278900836139008&permissions=1151990787078&scope=bot%20applications.commands"
 			discordInvite="https://discord.gg/hy2329fcTZ"
 			donationUrl="https://buymeacoffee.com/Hyacinthbots"
-			site="https://hyacinthbots.org/lily/"
+			site="https://hyacinthbots.org/bots/lily/about-lily"
 			vcs="https://github.com/HyacinthBots/LilyBot/tree/main"
 		>
 			<p>

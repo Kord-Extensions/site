@@ -10,8 +10,7 @@
 	export let padImage: boolean = false
 
 	export let site: string | undefined = undefined
-
-	// export let vcs: string | undefined = undefined
+	export let vcs: string | undefined = undefined
 
 	export let discordAddUrl: string | undefined = undefined
 	export let discordInvite: string | undefined = undefined
@@ -41,6 +40,12 @@
 				{#if site !== undefined}
 					<Button href={site} variant="secondary" size="sm" title="Website">
 						<Globe size="1rem" />
+					</Button>
+				{/if}
+
+				{#if vcs !== undefined}
+					<Button href={site} variant="secondary" size="sm" title="Website">
+						<Code size="1rem" />
 					</Button>
 				{/if}
 
