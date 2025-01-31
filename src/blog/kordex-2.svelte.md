@@ -226,12 +226,9 @@ projects on GitHub.
 
 ### Option 5: Donations
 
-Finally, I decided to list the [Ko-Fi donations](https://ko-fi.com/gsc) I've been collecting.
+Finally, I decided to list the [donations](https://donate.stripe.com/3csg29aPp95Rgxi7ss) I've been collecting.
 While I was always planning to continue to collect donations, I was wondering how many people thought it was an
 effective idea — especially since I almost never receive donations.
-
-As Stripe has apparently started cracking down on Ko-Fi users via a new Terms of Service, I'll also be looking into
-other ways that I can collect donations.
 
 ### Poll Results
 

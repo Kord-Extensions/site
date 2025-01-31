@@ -90,7 +90,7 @@
 
 				<div class="flex flex-row items-end content-end place-self-end space-x-4">
 					<Button
-						href="https://ko-fi.com/gsc"
+						href="https://donate.stripe.com/3csg29aPp95Rgxi7ss"
 						variant="orange"
 					>
 						<DollarSign size="1.5rem"/>
@@ -107,7 +107,7 @@
 				</p>
 
 				<Button
-					href="https://ko-fi.com/gsc"
+					href="https://donate.stripe.com/3csg29aPp95Rgxi7ss"
 					variant="orange"
 				>
 					<DollarSign size="1.5rem"/>
@@ -225,7 +225,7 @@
 			<span class="flex-grow"></span>
 
 			<Button
-				href="https://ko-fi.com/gsc"
+				href="https://donate.stripe.com/3csg29aPp95Rgxi7ss"
 				variant="orange"
 			>
 				<DollarSign size="1.5rem"/>
@@ -244,7 +244,7 @@
 		</p>
 
 		<Button
-			href="https://ko-fi.com/gsc"
+			href="https://donate.stripe.com/3csg29aPp95Rgxi7ss"
 			variant="orange"
 		>
 			<DollarSign size="1.5rem"/>

@@ -83,7 +83,7 @@
 			</Button>
 
 			<Button
-				href="https://ko-fi.com/gsc"
+				href="https://donate.stripe.com/3csg29aPp95Rgxi7ss"
 				variant="orange"
 			>
 				<DollarSign size="1.5rem" class="mr-1" />
