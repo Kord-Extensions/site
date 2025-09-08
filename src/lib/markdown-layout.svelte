@@ -36,6 +36,7 @@
 	}
 
 	afterNavigate(() => {
+		// @ts-expect-error See note in source code
 		twemoji.parse(mainElement, {
 			ext: ".svg",
 			folder: "svg",
@@ -45,83 +46,87 @@
 	});
 </script>
 
-{#if !excerptMode}
-	<Metadata
-		pageTitle={title}
-		description={summary}
+<div class="flex flex-col flex-grow items-center">
+	<div style="max-width: 50rem">
+		{#if !excerptMode}
+			<Metadata
+				pageTitle={title}
+				description={summary}
 
-		{post}
-	/>
-{/if}
-
-{#if slug}
-	<span class="hidden">
-		<a href="/blog/{slug}">Svelte needs this link to build.</a>
-	</span>
-{/if}
-
-<div
-	class={excerptMode ? undefined : "flex flex-col"}
-	style={excerptMode ? undefined : "min-height: calc(100vh - 6em)"}
-	bind:this={mainElement}
->
-	<header class="grow-0 shrink-0">
-		<h1 class="mb-0 font-semibold text-3xl">{title}</h1>
-
-		{#if post && (post.author || post.createdDate || post.modifiedDate)}
-			<h5 class="mb-0 text-muted-foreground flex flex-row space-x-2 items-center" data-toc-ignore>
-				{#if post.author}
-					<Tooltip.Root>
-						<Tooltip.Trigger class="flex flex-row items-center">
-							<User size="1rem" class="mr-1" />
-							{post.author}
-						</Tooltip.Trigger>
-						<Tooltip.Content>
-							Post author: {post.author}
-						</Tooltip.Content>
-					</Tooltip.Root>
-				{/if}
-
-				{#if post.author && (post.createdDate || post.modifiedDate)}
-					<span>|</span>
-				{/if}
-
-				{#if post.createdDate}
-					<Tooltip.Root>
-						<Tooltip.Trigger class="flex flex-row items-center">
-							<Sparkles size="1rem" class="mr-1" />
-							<Time timestamp={post.createdDate} format="MMMM D YYYY" />
-						</Tooltip.Trigger>
-						<Tooltip.Content>
-							Post created: <Time timestamp={post.createdDate} format="MMMM D, YYYY [at] HH:mm [(UTC)]" />
-						</Tooltip.Content>
-					</Tooltip.Root>
-				{/if}
-
-				{#if post.createdDate && post.modifiedDate && (post.createdDate.getTime() !== post.modifiedDate.getTime())}
-					<span>|</span>
-				{/if}
-
-				{#if post.modifiedDate && (post.createdDate.getTime() !== post.modifiedDate.getTime())}
-					<Tooltip.Root>
-						<Tooltip.Trigger class="flex flex-row items-center">
-							<Pencil size="1rem" class="mr-1" />
-							<Time timestamp={post.modifiedDate} format="MMMM D YYYY" />
-						</Tooltip.Trigger>
-						<Tooltip.Content>
-							Post modified: <Time timestamp={post.modifiedDate} format="MMMM D, YYYY [at] HH:mm [(UTC)]" />
-						</Tooltip.Content>
-					</Tooltip.Root>
-				{/if}
-			</h5>
+				{post}
+			/>
 		{/if}
 
-		<h5 class="mb-4 text-muted-foreground" data-toc-ignore>
-			{summary}
-		</h5>
-	</header>
+		{#if slug}
+			<span class="!hidden">
+				<a href="/blog/{slug}">Svelte needs this link to build.</a>
+			</span>
+		{/if}
 
-	<article class="prose dark:prose-invert grow">
-		<slot />
-	</article>
+		<div
+			class={excerptMode ? undefined : "flex flex-col"}
+			style={excerptMode ? undefined : "min-height: calc(100vh - 6em)"}
+			bind:this={mainElement}
+		>
+			<header class="grow-0 shrink-0">
+				<h1 class="mb-0 font-semibold text-3xl">{title}</h1>
+
+				{#if post && (post.author || post.createdDate || post.modifiedDate)}
+					<h5 class="mb-0 text-muted-foreground flex flex-row space-x-2 items-center" data-toc-ignore>
+						{#if post.author}
+							<Tooltip.Root>
+								<Tooltip.Trigger class="flex flex-row items-center">
+									<User size="1rem" class="mr-1" />
+									{post.author}
+								</Tooltip.Trigger>
+								<Tooltip.Content>
+									Post author: {post.author}
+								</Tooltip.Content>
+							</Tooltip.Root>
+						{/if}
+
+						{#if post.author && (post.createdDate || post.modifiedDate)}
+							<span>|</span>
+						{/if}
+
+						{#if post.createdDate}
+							<Tooltip.Root>
+								<Tooltip.Trigger class="flex flex-row items-center">
+									<Sparkles size="1rem" class="mr-1" />
+									<Time timestamp={post.createdDate} format="MMMM D YYYY" />
+								</Tooltip.Trigger>
+								<Tooltip.Content>
+									Post created: <Time timestamp={post.createdDate} format="MMMM D, YYYY [at] HH:mm [(UTC)]" />
+								</Tooltip.Content>
+							</Tooltip.Root>
+						{/if}
+
+						{#if post.createdDate && post.modifiedDate && (post.createdDate.getTime() !== post.modifiedDate.getTime())}
+							<span>|</span>
+						{/if}
+
+						{#if post.modifiedDate && (post.createdDate.getTime() !== post.modifiedDate.getTime())}
+							<Tooltip.Root>
+								<Tooltip.Trigger class="flex flex-row items-center">
+									<Pencil size="1rem" class="mr-1" />
+									<Time timestamp={post.modifiedDate} format="MMMM D YYYY" />
+								</Tooltip.Trigger>
+								<Tooltip.Content>
+									Post modified: <Time timestamp={post.modifiedDate} format="MMMM D, YYYY [at] HH:mm [(UTC)]" />
+								</Tooltip.Content>
+							</Tooltip.Root>
+						{/if}
+					</h5>
+				{/if}
+
+				<h5 class="mb-4 text-muted-foreground" data-toc-ignore>
+					{summary}
+				</h5>
+			</header>
+
+			<article class="prose dark:prose-invert grow">
+				<slot />
+			</article>
+		</div>
+	</div>
 </div>

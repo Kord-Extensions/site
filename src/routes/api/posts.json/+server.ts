@@ -40,7 +40,7 @@ async function getPosts(): Promise<Post[]> {
 
 	return posts.sort((first, second) =>
 		first.slug.localeCompare(second.slug),
-	);
+	).reverse();
 }
 
 export async function GET(): Promise<Response> {
