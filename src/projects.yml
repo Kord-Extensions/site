@@ -29,13 +29,13 @@ bots:
       Upcoming features include an initiative tracker, and potential integration with Discord Activities.
 
   - name: Blanketbot
-    author: NotJansel
+    author: Jansel
     license: GPL 3.0
 
     botInvite: "https://discord.com/oauth2/authorize?client_id=1130933938408403034"
 
     donationUrl: "https://ko-fi.com/jansel"
-    vcs: "https://github.com/NotJansel/Feixiao/tree/root"
+    vcs: "https://codeberg.org/jansel/Feixiao"
 
     shortDescription: Stream notification bot.
 
