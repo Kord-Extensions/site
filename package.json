@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
-  "scripts": {
+	"packageManager": "pnpm@10.12.1",
+	"scripts": {
     "dev": "vite dev --host",
     "build": "vite build",
     "preview": "vite preview",
