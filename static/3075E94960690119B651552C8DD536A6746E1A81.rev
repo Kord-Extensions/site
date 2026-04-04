@@ -1,0 +1,24 @@
+This is a revocation certificate for the OpenPGP key:
+
+             Kord Extensions <moderation@kordex.dev>
+Fingerprint: 3075E94960690119B651552C8DD536A6746E1A81
+
+A revocation certificate is a kind of "kill switch" to publicly
+declare that a key shall not be used any more.  It is not possible
+to retract such a revocation certificate once it has been published.
+
+Use it to revoke this key in case of a compromise or loss of
+the secret key.
+
+To avoid an accidental use of this file, a colon has been inserted
+before the 5 dashes below.  Remove this colon with a text editor
+before importing and publishing this revocation certificate.
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: This is a revocation certificate
+
+iHgEIBYKACAWIQQwdelJYGkBGbZRVSyN1TamdG4agQUCadD7egIdAAAKCRCN1Tam
+dG4agaKgAQCXW+BxqtF4Pu8ACcX0QWGZ/Xp0+tzaxrHRk9Du5HG4hwD+NahYFTiY
+x4yFJJ/GeHp+1c7fwTXZ6GCgtQkbs9ny7Q4=
+=01yD
+-----END PGP PUBLIC KEY BLOCK-----
