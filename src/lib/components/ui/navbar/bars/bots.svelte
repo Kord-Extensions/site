@@ -104,7 +104,7 @@
 						Donate
 					</Navbar.DrawerLink>
 
-					<Navbar.DrawerLink href="https://docs.kordex.dev/licensing.html" bind:open={drawer0pen}>
+					<Navbar.DrawerLink href="https://docs.kordex.dev/about/licencing/" bind:open={drawer0pen}>
 						<Scale class="mr-2" size="1.5em" slot="icon" />
 
 						Licensing Info
@@ -185,7 +185,7 @@
 						Donate
 					</Navbar.DropdownItem>
 
-					<Navbar.DropdownItem href="https://docs.kordex.dev/licensing.html">
+					<Navbar.DropdownItem href="https://docs.kordex.dev/about/licencing/">
 						<Scale class="mr-2" size="1.5rem" slot="icon" />
 
 						Licensing Info

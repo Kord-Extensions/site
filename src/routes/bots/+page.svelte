@@ -182,8 +182,8 @@
 				KordEx was built from the ground up with a priority on the developer experience, and we believe the code speaks
 				for itself.
 				If you're new to KordEx, we recommend checking out
-				<a class="link" href="https://github.com/kord-extensions/template">the template project</a> and the
-				<a class="link" href="https://docs.kordex.dev/beginner-tutorial">beginner tutorial</a>.
+				<a class="link" href="https://codeberg.org/Kord-Extensions/template">the template project</a> and the
+				<a class="link" href="https://docs.kordex.dev/bots/tutorials/">beginner tutorials</a>.
 			</p>
 
 			<p class="mt-4">
@@ -199,7 +199,7 @@
 
 			<h3 class="sub-title text-muted-foreground mb-4">
 				To learn about Kord Extensions and how to get started, check out
-				<a class="link" href="https://docs.kordex.dev/getting-started.html">the Getting Started guide</a>.
+				<a class="link" href="https://docs.kordex.dev/bots/tutorials/quick">the quickstart</a>.
 			</h3>
 
 			<hr class="my-5" />
