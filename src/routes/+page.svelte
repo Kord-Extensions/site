@@ -117,6 +117,17 @@
 			{/if}
 		</div>
 	</div>
+
+	<a href="https://jb.gg/OpenSource" class="my-4 flex flex-col gap-4 bg-primary bg-opacity-20 w-fit mx-auto p-4 rounded">
+		<p class="text-center text-2xl">
+			Tooling provided by
+		</p>
+
+		<picture>
+			<img src="/jetbrains-dark.svg" alt="JetBrains" class="hidden mx-auto dark:block w-80"/>
+			<img src="/jetbrains-light.svg" alt="JetBrains" class="block mx-auto dark:hidden w-80"/>
+		</picture>
+	</a>
 </Containers.Content>
 
 <div class="mx-4 pt-3 pb-0 mb-0 grid grid-cols-s md:grid-cols-2 md:space-x-4">
